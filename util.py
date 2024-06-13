@@ -12,8 +12,37 @@ from IPython import embed
 from joblib import Parallel, delayed
 from subprocess import Popen, PIPE
 
+import logging
+
+def setup_logger(log_file):
+    # Create a logger
+    logger = logging.getLogger('main')
+    logger.setLevel(logging.DEBUG)
+
+    # Create a file handler
+    file_handler = logging.FileHandler(log_file, mode='w')
+    file_handler.setLevel(logging.DEBUG)
+
+    # Create a console handler
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+
+    # Create a formatter and add it to the file handler
+    formatter = logging.Formatter('%(asctime)s,%(msecs)03d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s','%Y-%m-%d:%H:%M:%S')
+    file_handler.setFormatter(formatter)
+    console_handler.setFormatter(formatter)
+
+    # Add the file handler to the logger
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    return logger
+
+
+logger = logging.getLogger('main')
 
 def get_nfiles_nevents_per_file(rootfile : str, isData: bool) -> float:
+    time.sleep(0.1)
     sumGenWt_sel_tree  = 0.0
     sumGenWt_nsel_tree = 0.0
 
@@ -50,10 +79,10 @@ def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
     root_files = []
     start = time.time()
     for filedir in rootfiledirs:
-        print(f"files dir: {filedir}")
+        logger.info(f"files dir: {filedir}")
         _root_files = glob.glob(f"{filedir}/*.root")
         root_files = root_files + _root_files
-    sumWt_list = Parallel(n_jobs=10)(delayed(get_nfiles_nevents_per_file)(file, isData) for file in root_files)        
+    sumWt_list = Parallel(n_jobs=3)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
     """
         for i in tqdm(range(len(root_files))):
             #for i, file in enumerate(root_files):
@@ -67,8 +96,8 @@ def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
     nTotalFiles = len(sumWt_array)
     sumGenWeights = ak.sum(sumWt_array)
     end = time.time()
-    print(f"getting sumWt in {round((end-start)/60, 3)} mins")
-    print(f"nFiles: {nTotalFiles}, sumWtProduced: {sumGenWeights}")
+    logger.info(f"getting sumWt in {round((end-start)/60, 3)} mins")
+
     return nTotalFiles, sumGenWeights
 
 
@@ -87,5 +116,5 @@ def runShellCmd(cmdList):
         if process.poll() is not None:
             break
         if output:
-            print(output.strip().decode("utf-8"))
+            logger.info(output.strip().decode("utf-8"))
     rc = process.poll()

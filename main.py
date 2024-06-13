@@ -5,6 +5,7 @@ import numpy as np
 import awkward as ak
 from subprocess import Popen, PIPE
 from tqdm import tqdm
+from IPython import embed
 import argparse
 
 
@@ -14,37 +15,62 @@ parser.add_argument("-c",
                     "--config",
                     action='store', required=True, type=str,
                     help="yaml config")
+parser.add_argument("-u",
+                    "--utilconfig",
+                    action='store', required=False, type=str,
+                    help="config with nentries and nfiles")
 
 args = parser.parse_args()
 
+
 yaml_path = args.config
-
-
 config = load_config(yaml_path)
-
 campaign_name = config.get("campaign")
+
+if not os.path.exists(os.path.join(os.getcwd(), "logs")):
+    os.mkdir(os.path.join(os.getcwd(), "logs"))
+
+logger = setup_logger(os.path.join("logs", f"Runlog_{campaign_name}.log"))
+logger.info(f"PWD: {os.getcwd()}")
+logger.info(f"Campaign to be produced: {campaign_name}")
+
 campaign_dir  = os.path.join(os.getcwd(), campaign_name)
 if os.path.exists(campaign_dir):
-    print(f"{campaign_dir} exists")
+    logger.info(f"{campaign_dir} exists")
 else:
-    runShellCmd(['mkdir', campaign_dir])
+    os.mkdir(campaign_dir)
 
 store_path = config.get("store_path")
+logger.info(f"Location of NanoAODs: {store_path}")
 era = config.get("era")
+logger.info(f"Era: {era}")
 nanoaod_version = config.get("nanoaod")
+logger.info(f"version: {nanoaod_version}")
 campaign_id = config.get("campaign_id")
+logger.info(f"campaign_id: {campaign_id}")
 ecm = 13 if era < 2022 else 13.6
+logger.info(f"ecm: {ecm}")
+
+
+utilconfigfile = os.path.join(campaign_dir, args.utilconfig)
+fileisthere = os.path.exists(utilconfigfile)
+logger.info(f"Yaml file with precalculated numbers {utilconfigfile}? : {fileisthere}")
+
+utilconfig = load_config(utilconfigfile) if fileisthere else None
 
 datasets_tobefilled = config.get("datasets_info")
-
-print(campaign_name, datasets_tobefilled)
+if fileisthere:
+    logger.info("checking if everything is calculated for all datasets in campaign ...")
+    all_dataset_names_from_main_config = list(datasets_tobefilled.keys())
+    all_dataset_names_from_util_config = list(utilconfig.keys())
+    missing = np.setxor1d(all_dataset_names_from_main_config, all_dataset_names_from_util_config)
+    logger.info(f"no pre-calculated numbers for : {list(missing)}")
 
 types_of_py_files = np.unique(np.array([item.get('dest') for item in list(datasets_tobefilled.values())]))
 
-    
-print("\n")
-print(types_of_py_files)
-print(f"creating these files inside {campaign_dir}")
+logger.info("\n")
+logger.info(types_of_py_files)
+logger.info(f"creating these files inside {campaign_dir}")
 for fname in types_of_py_files:
     with open(os.path.join(campaign_dir, fname), 'w') as _f:
         _f.write(f"# {fname}\n")
@@ -82,21 +108,40 @@ with open(os.path.join(campaign_dir, "__init__.py"), 'w') as _f:
         
 # looping over the datasets
 for dataset_key, dataset_val in datasets_tobefilled.items():
-    print(f"\ndataset name: {dataset_key}")
+    logger.info("\n\n")
+    logger.info(f"dataset name: {dataset_key}")
+    nfiles = None
+    nevents = None
+    isDATA = True if 'data' in dataset_key else False
     file_name = dataset_val.get("dest")
-    #print(file_name)
+    #logger.info(file_name)
     dataset_full_paths        = [store_path+key for key in dataset_val.get("keys")]
-    nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, dataset_val.get("is_data"))
+    if fileisthere and dataset_key in list(utilconfig.keys()):
+        logger.info(f"getting numbers from {utilconfigfile}")
+        temp = utilconfig.get(dataset_key)
+        nfiles  = temp["nfiles"]
+        nevents = temp["nevents"]
+    else:
+        logger.info(f"calculating nevents and nfiles")
+        nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA)
+    
+    logger.info(f"nFiles: {nfiles}, sumWtProduced: {nevents}")
 
-    #print(nfiles, nevents)
-
+    # read existing file
+    # with open(os.path.join(campaign_dir, file_name), 'r') as fname:
+    #    embed()
+    #    lines = fname.readlines()
+    #    if f"name='{dataset_key}'"
+   
     with open(os.path.join(campaign_dir, file_name), 'a') as fname:
         fname.write("\n\n")
         fname.write("cpn.add_dataset(\n    ")
-        fname.write(f"""name='{dataset_key}', """+"\n    ")
+        fname.write(f"""name='{dataset_key}',"""+"\n    ")
         fname.write(f"""id={dataset_val.get("id")},"""+"\n    ")
-        fname.write(f"""is_data={dataset_val.get("is_data")},"""+"\n    ")
-        fname.write(f"""processes={dataset_val.get("processes")},"""+"\n    ")
+        #fname.write(f"""is_data={dataset_val.get("is_data")},"""+"\n    ")
+        fname.write(f"""is_data={isDATA},"""+"\n    ")
+        #embed()
+        fname.write(f"""processes=[{','.join(dataset_val.get("processes"))}],"""+"\n    ")
         fname.write(f"""keys={dataset_val.get("keys")},"""+"\n    ")
         fname.write(f"""n_files={nfiles},"""+"\n    ")
         fname.write(f"""n_events={nevents},"""+"\n    ")
