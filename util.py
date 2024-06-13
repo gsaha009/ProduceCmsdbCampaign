@@ -42,7 +42,6 @@ def setup_logger(log_file):
 logger = logging.getLogger('main')
 
 def get_nfiles_nevents_per_file(rootfile : str, isData: bool) -> float:
-    time.sleep(0.1)
     sumGenWt_sel_tree  = 0.0
     sumGenWt_nsel_tree = 0.0
 
@@ -70,6 +69,8 @@ def get_nfiles_nevents_per_file(rootfile : str, isData: bool) -> float:
 
     sumWt   = sumGenWt_sel_tree + sumGenWt_nsel_tree
 
+    time.sleep(0.01)
+
     return sumWt
 
 
@@ -82,15 +83,15 @@ def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
         logger.info(f"files dir: {filedir}")
         _root_files = glob.glob(f"{filedir}/*.root")
         root_files = root_files + _root_files
-    sumWt_list = Parallel(n_jobs=3)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
+    sumWt_list = Parallel(n_jobs=6)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
     """
-        for i in tqdm(range(len(root_files))):
-            #for i, file in enumerate(root_files):
-            file = root_files[i]
-            nTotalFiles += 1
-            wt = get_nfiles_nevents_per_file(file, isData)
-            sumGenWeights += wt
-            sleep(0.01)
+    for i in tqdm(range(len(root_files))):
+        #for i, file in enumerate(root_files):
+        file = root_files[i]
+        nTotalFiles += 1
+        wt = get_nfiles_nevents_per_file(file, isData)
+        sumGenWeights += wt
+        sleep(0.01)
     """
     sumWt_array = ak.Array(sumWt_list)
     nTotalFiles = len(sumWt_array)
