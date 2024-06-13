@@ -13,14 +13,14 @@
 
 
 # name of the campaign to be created
-campaign: run3_2022_postEE_nano_tau_v14
+campaign: run3_2022_preEE_nano_tau_v14
 # path of the nanoaod samples
-store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022EE
+store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022
 # era
 era: 2022
 nanoaod: 14
 # year (YR) version (nanoaod) UniqueNo (ZZZ)
-campaign_id: 2214002
+campaign_id: 2214001
 
 datasets_info: 
   # -------------------------------------------------- #
@@ -29,40 +29,27 @@ datasets_info:
 
   # tau dataset
 
-  data_tau_E:
+  data_tau_C:
     id: 11
     processes:
       - procs.data_tau
     keys:
-      - /Tau_Run2022E
+      - /Tau_Run2022C
     aux:
-      era: E
+      era: C
       require_triggers:
         - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
         - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_tau_F:
+  data_tau_D:
     id: 12
     processes:
       - procs.data_tau
     keys:
-      - /Tau_Run2022F
+      - /Tau_Run2022D
     aux:
-      era: F
-      require_triggers:
-        - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
-        - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
-    dest: data.py
-
-  data_tau_G:
-    id: 13
-    processes:
-      - procs.data_tau
-    keys:
-      - /Tau_Run2022G
-    aux:
-      era: G
+      era: D
       require_triggers:
         - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
         - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -71,27 +58,27 @@ datasets_info:
 
   # mu dataset
 
-  data_mu_E:
+  data_mu_C:
     id: 20
     processes:
       - procs.data_mu
     keys:
-      - /Muon_Run2022E
+      - /Muon_Run2022C
     aux:
-      era: E
+      era: C
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_mu_G:
+  data_mu_D:
     id: 21
     processes:
       - procs.data_mu
     keys:
-      - /Muon_Run2022G
+      - /Muon_Run2022D
     aux:
-      era: G
+      era: D
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -100,27 +87,27 @@ datasets_info:
 
   # e dataset
 
-  data_e_E:
+  data_e_C: 
     id: 30
     processes:
       - procs.data_e
     keys:
-      - /EGamma_Run2022E
+      - /EGamma_Run2022C
     aux:
-      era: E
+      era: C
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_e_G:
+  data_e_D:
     id: 31
     processes:
       - procs.data_e
     keys:
-      - /EGamma_Run2022G
+      - /EGamma_Run2022D
     aux:
-      era: G
+      era: D
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -137,7 +124,8 @@ datasets_info:
     processes:
       - procs.dy_lep_m50
     keys:
-      - /DYto2L_M-50_amcatnloFXFX
+      - /DYto2L_M-50_madgraphMLM
+      - /DYto2L_M-50_madgraphMLM_ext1
     dest: dy.py
 
   dy_lep_m10to50:
@@ -339,7 +327,7 @@ datasets_info:
     processes:
       - procs.h_ggf_tautau
     keys:
-      - /GluGluHToTauTau_M125_amcatnloFXFX
+      - /GluGluHToTauTau_M125
     aux:
       is_signal: True
     dest: signal.py
