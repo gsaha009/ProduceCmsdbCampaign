@@ -83,7 +83,7 @@ def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
         logger.info(f"files dir: {filedir}")
         _root_files = glob.glob(f"{filedir}/*.root")
         root_files = root_files + _root_files
-    sumWt_list = Parallel(n_jobs=6)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
+    sumWt_list = Parallel(n_jobs=4)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
     """
     for i in tqdm(range(len(root_files))):
         #for i, file in enumerate(root_files):
