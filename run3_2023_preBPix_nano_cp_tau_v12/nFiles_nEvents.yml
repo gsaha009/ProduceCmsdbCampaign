@@ -1,0 +1,66 @@
+data_tau_C:
+  nfiles: 7
+  nevents: 14484171.0
+data_mu0_C:
+  nfiles: 21
+  nevents: 91794724.0
+data_mu1_C:
+  nfiles: 21
+  nevents: 91692246.0
+data_e0_C:
+  nfiles: 23
+  nevents: 106824436.0
+data_e1_C:
+  nfiles: 23
+  nevents: 106748681.0
+dy_lep_m50:
+  nfiles: 75
+  nevents: 103978251.0
+dy_lep_0j:
+  nfiles: 80
+  nevents: 155735461.0
+dy_lep_1j:
+  nfiles: 108
+  nevents: 90103222.0
+dy_lep_2j:
+  nfiles: 107
+  nevents: 47134234.0
+wj_incl:
+  nfiles: 48
+  nevents: 191075090.0
+ww:
+  nfiles: 11
+  nevents: 33507000.0
+wz:
+  nfiles: 5
+  nevents: 16770000.0
+zz:
+  nfiles: 1
+  nevents: 2517000.0
+tt_sl:
+  nfiles: 143
+  nevents: 151416926.0
+tt_dl:
+  nfiles: 0
+  nevents: 0.0
+tt_fh:
+  nfiles: 65
+  nevents: 104112654.0
+st_tw_t_sl:
+  nfiles: 8
+  nevents: 9649924.0
+st_tw_t_dl:
+  nfiles: 5
+  nevents: 4984812.0
+st_tw_t_fh:
+  nfiles: 4
+  nevents: 7918700.0
+st_tw_tb_dl:
+  nfiles: 5
+  nevents: 4906798.0
+st_tw_tb_fh:
+  nfiles: 5
+  nevents: 7969722.0
+h_ggf_tautau:
+  nfiles: 2
+  nevents: 1113441.0

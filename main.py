@@ -107,7 +107,7 @@ with open(os.path.join(campaign_dir, "__init__.py"), 'w') as _f:
     
         
 # looping over the datasets
-for dataset_key, dataset_val in datasets_tobefilled.items():
+for idx, (dataset_key, dataset_val) in enumerate(datasets_tobefilled.items()):
     logger.info("\n\n")
     logger.info(f"dataset name: {dataset_key}")
     nfiles = None
@@ -132,12 +132,15 @@ for dataset_key, dataset_val in datasets_tobefilled.items():
     #    embed()
     #    lines = fname.readlines()
     #    if f"name='{dataset_key}'"
-   
+
+    dataset_id = int(f"{campaign_id}{idx}")
+    
     with open(os.path.join(campaign_dir, file_name), 'a') as fname:
         fname.write("\n\n")
         fname.write("cpn.add_dataset(\n    ")
         fname.write(f"""name='{dataset_key}',"""+"\n    ")
-        fname.write(f"""id={dataset_val.get("id")},"""+"\n    ")
+        #fname.write(f"""id={dataset_val.get("id")},"""+"\n    ")
+        fname.write(f"""id={dataset_id},"""+"\n    ")
         #fname.write(f"""is_data={dataset_val.get("is_data")},"""+"\n    ")
         fname.write(f"""is_data={isDATA},"""+"\n    ")
         #embed()

@@ -1,0 +1,711 @@
+# yaml file to produce the datasets for a campaign
+# DATASET_NAME :
+#   id :
+#   processes :
+#     - bla1
+#     - bla2
+#   keys :
+#     - foo1
+#     - foo2
+#   n_files : CALC (automatic)
+#   n_events : CALC (automatic)
+#   destination : FILENAME
+
+
+# name of the campaign to be created
+campaign: run2_UL2016_preVFP_nano_cp_tau_v09
+# path of the nanoaod samples
+store_path: /eos/cms/store/group/phys_higgs/HLepRare/HTT_skim_v1/Run2_2016_HIPM
+# era
+era: 2016
+nanoaod: 9
+# year (YR) version (nanoaod) UniqueNo (ZZ: e.g. PreVFP 01, PostVFP 02)
+campaign_id: 160901
+
+datasets_info: 
+  # -------------------------------------------------- #
+  # ---------------------- DATA ---------------------- #
+  # -------------------------------------------------- #
+
+  # ----------------- tau dataset -------------------- #
+
+  data_tau_B:
+    processes:
+      - procs.data_tau
+    keys:
+      - /Tau_Run2016B
+    aux:
+      era: B
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_tau_C:
+    processes:
+      - procs.data_tau
+    keys:
+      - /Tau_Run2016C
+    aux:
+      era: C
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_tau_D:
+    processes:
+      - procs.data_tau
+    keys:
+      - /Tau_Run2016D
+    aux:
+      era: D
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_tau_E:
+    processes:
+      - procs.data_tau
+    keys:
+      - /Tau_Run2016E
+    aux:
+      era: E
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_tau_F:
+    processes:
+      - procs.data_tau
+    keys:
+      - /Tau_Run2016F
+    aux:
+      era: F
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+
+  # ---------------- mu dataset ---------------- #
+
+  data_mu_B:
+    processes:
+      - procs.data_mu
+    keys:
+      - /SingleMuon_Run2016B
+    aux:
+      era: B
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_mu_C:
+    processes:
+      - procs.data_mu
+    keys:
+      - /SingleMuon_Run2016C
+    aux:
+      era: C
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_mu_D:
+    processes:
+      - procs.data_mu
+    keys:
+      - /SingleMuon_Run2016D
+    aux:
+      era: D
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_mu_E:
+    processes:
+      - procs.data_mu
+    keys:
+      - /SingleMuon_Run2016E
+    aux:
+      era: E
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_mu_F:
+    processes:
+      - procs.data_mu
+    keys:
+      - /SingleMuon_Run2016F
+    aux:
+      era: F
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+
+  # ------------- e dataset --------------- #
+
+  data_e_B: 
+    processes:
+      - procs.data_e
+    keys:
+      - /SingleElectron_Run2016B
+    aux:
+      era: B
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_e_C:
+    processes:
+      - procs.data_e
+    keys:
+      - /SingleElectron_Run2016C
+    aux:
+      era: C
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_e_D:
+    processes:
+      - procs.data_e
+    keys:
+      - /SingleElectron_Run2016D
+    aux:
+      era: D
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_e_E:
+    processes:
+      - procs.data_e
+    keys:
+      - /SingleElectron_Run2016E
+    aux:
+      era: E
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_e_F:
+    processes:
+      - procs.data_e
+    keys:
+      - /SingleElectron_Run2016F
+    aux:
+      era: F
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+
+  # -------------------------------------------------- #
+  # ----------------------- DY ----------------------- #
+  # -------------------------------------------------- #
+
+  # ---------------- LO ----------------- #
+
+  dy_lep_lo_m50:
+    processes:
+      - procs.dy_lep_m50
+    keys:
+      - /DYJetsToLL_M-50-madgraphMLM
+    dest: dy.py    
+
+  dy_lep_lo_m10to50:
+    processes:
+      - procs.dy_lep_m10to50
+    keys:
+      - /DYJetsToLL_M-10to50-madgraphMLM
+    dest: dy.py
+
+  dy_lep_lo_m50_1j:
+    processes:
+      - procs.dy_lep_m50_1j
+    keys:
+      - /DY1JetsToLL_M-50-madgraphMLM
+    dest: dy.py
+
+  dy_lep_lo_m50_2j:
+    processes:
+      - procs.dy_lep_m50_2j
+    keys:
+      - /DY2JetsToLL_M-50-madgraphMLM
+    dest: dy.py
+
+  dy_lep_lo_m50_3j:
+    processes:
+      - procs.dy_lep_m50_3j
+    keys:
+      - /DY3JetsToLL_M-50-madgraphMLM
+    dest: dy.py
+
+  dy_lep_lo_m50_4j:
+    processes:
+      - procs.dy_lep_m50_4j
+    keys:
+      - /DY4JetsToLL_M-50-madgraphMLM
+    dest: dy.py
+
+  # -------------- NLO -------------- #
+
+  dy_lep_nlo_m50:
+    processes:
+      - procs.dy_lep_m50
+    keys:
+      - /DYJetsToLL_M-50-amcatnloFXFX
+    dest: dy.py
+
+
+  dy_lep_nlo_m10to50:
+    processes:
+      - procs.dy_lep_m10to50
+    keys:
+      - /DYJetsToLL_M-10to50-amcatnloFXFX
+    dest: dy.py
+
+  dy_lep_nlo_0j:
+    processes:
+      - procs.dy_lep_m50_0j
+    keys:
+      - /DYJetsToLL_0J-amcatnloFXFX
+    dest: dy.py
+
+  dy_lep_nlo_1j:
+    processes:
+      - procs.dy_lep_m50_1j
+    keys:
+      - /DYJetsToLL_1J-amcatnloFXFX
+    dest: dy.py
+
+  dy_lep_nlo_2j:
+    processes:
+      - procs.dy_lep_m50_2j
+    keys:
+      - /DYJetsToLL_2J-amcatnloFXFX
+    dest: dy.py
+
+
+
+  # -------------------------------------------------- #
+  # ----------------------- WJ ----------------------- #
+  # -------------------------------------------------- #
+
+  # ------------ LO ------------ #
+
+  wj_lo_incl:
+    processes:
+      - procs.w_lnu
+    keys:
+      - /WJetsToLNu
+    dest: wj.py
+
+  wj_lo_1j:
+    processes:
+      - procs.w_lnu_lo_1j
+    keys:
+      - /W1JetsToLNu
+    dest: wj.py
+
+  wj_lo_2j:
+    processes:
+      - procs.w_lnu_lo_2j
+    keys:
+      - /W2JetsToLNu
+    dest: wj.py
+
+  wj_lo_3j:
+    processes:
+      - procs.w_lnu_lo_3j
+    keys:
+      - /W3JetsToLNu
+    dest: wj.py
+
+  wj_lo_4j:
+    processes:
+      - procs.w_lnu_lo_4j
+    keys:
+      - /W4JetsToLNu
+    dest: wj.py
+
+
+  # ------------ NLO ------------ #
+
+  wj_nlo_incl:
+    processes:
+      - procs.w_lnu
+    keys:
+      - /WJetsToLNu-amcatnloFXFX
+    dest: wj.py
+
+  wj_nlo_0j:
+    processes:
+      - procs.w_lnu_0j
+    keys:
+      - /W0JetsToLNu-amcatnloFXFX
+    dest: wj.py
+
+  wj_nlo_1j:
+    processes:
+      - procs.w_lnu_1j
+    keys:
+      - /W1JetsToLNu-amcatnloFXFX
+    dest: wj.py
+
+  wj_nlo_2j:
+    processes:
+      - procs.w_lnu_2j
+    keys:
+      - /W2JetsToLNu-amcatnloFXFX
+    dest: wj.py
+
+  # -------------------------------------------------- #
+  # ---------------------- EWK ----------------------- #
+  # -------------------------------------------------- #
+
+  ewk_wmtolnu:
+    processes:
+      - procs.ewk_wm_lnu_m50
+    keys:
+      - /EWK_WminusToLNu
+    dest: ewk.py
+
+  ewk_wptolnu:
+    processes:
+      - procs.ewk_wp_lnu_m50
+    keys:
+      - /EWK_WplusToLNu
+    dest: ewk.py
+
+  ewk_zll:
+    processes:
+      - procs.ewk_z_ll_m50
+    keys:
+      - /EWK_ZTo2L
+    dest: ewk.py
+
+
+  # -------------------------------------------------- #
+  # ----------------------- VV ----------------------- #
+  # -------------------------------------------------- #
+
+  # ----------------- WW ---------------- #
+
+  ww_incl:
+    processes:
+      - procs.ww
+    keys:
+      - /WW
+    dest: vv.py
+
+  ww_lnulnu:
+    processes:
+      - procs.ww_lnulnu
+    keys:
+      - /WWTo2L2Nu
+    dest: vv.py
+
+  ww_lnuqq:
+    processes:
+      - procs.ww_lnuqq
+    keys:
+      - /WWTo1L1Nu2Q
+    dest: vv.py
+
+  ww_qqqq:
+    processes:
+      - procs.ww_qqqq
+    keys:
+      - /WWTo4Q
+    dest: vv.py
+
+
+  # ----------------- WZ ---------------- #
+  
+  wz_incl:
+    processes:
+      - procs.wz
+    keys:
+      - /WZ
+    dest: vv.py
+
+  wz_qqll:
+    processes:
+      - procs.wz_qqll_m4
+    keys:
+      - /WZTo2Q2L
+    dest: vv.py
+
+  wz_lllnu:
+    processes:
+      - procs.wz_lllnu_m4
+    keys:
+      - /WZTo3LNu
+    dest: vv.py
+
+  wz_lnuqq:
+    processes:
+      - procs.wz_lnuqq
+    keys:
+      - /WZTo1L1Nu2Q
+    dest: vv.py
+
+  # -------------- ZZ ------------- #
+
+  zz_incl:
+    processes:
+      - procs.zz
+    keys:
+      - /ZZ
+    dest: vv.py
+
+  zz_llll:
+    processes:
+      - procs.zz_llll_m4
+    keys:
+      - /ZZTo4L
+    dest: vv.py
+
+  zz_llnunu:
+    processes:
+      - procs.zz_llnunu_m4
+    keys:
+      - /ZZTo2L2Nu
+    dest: vv.py
+
+  zz_llqq:
+    processes:
+      - procs.zz_qqll_m4
+    keys:
+      - /ZZTo2Q2L
+    dest: vv.py
+
+  zz_qqqq:
+    processes:
+      - procs.zz_qqqq
+    keys:
+      - /ZZTo4Q
+    dest: vv.py
+
+  zz_qqnunu:
+    processes:
+      - procs.zz_qqnunu
+    keys:
+      - /ZZTo2Q2Nu
+    dest: vv.py
+
+
+  # -------------------------------------------------- #
+  # ----------------------- TT ----------------------- #
+  # -------------------------------------------------- #
+
+  tt_sl: 
+    processes:
+      - procs.tt_sl
+    keys: 
+      - /TTToSemiLeptonic
+    dest: tt.py
+
+  tt_dl: 
+    processes:
+      - procs.tt_dl
+    keys: 
+      - /TTTo2L2Nu
+    dest: tt.py
+
+  tt_fh: 
+    processes: 
+      - procs.tt_fh
+    keys: 
+      - /TTToHadronic
+    dest: tt.py
+
+  # -------------------------------------------------- #
+  # ----------------------- ST ----------------------- #
+  # -------------------------------------------------- #
+
+  st_tchannel_t: 
+    processes: 
+      - procs.st_tchannel_t
+    keys: 
+      - /ST_t-channel_top_4f_InclusiveDecays
+    dest: st.py
+
+  st_tchannel_tbar: 
+    processes:
+      - procs.st_tchannel_tbar
+    keys: 
+      - /ST_t-channel_antitop_4f_InclusiveDecays
+    dest: st.py
+
+
+  # -------------------------------------------------- #
+  # ----------------------- TW ----------------------- #
+  # -------------------------------------------------- #
+
+  st_tw_t: 
+    processes:
+      - procs.st_twchannel_t
+    keys: 
+      - /ST_tW_top_5f_InclusiveDecays
+    dest: st.py
+
+  st_tw_tb: 
+    processes:
+      - procs.st_twchannel_tbar
+    keys: 
+      - /ST_tW_antitop_5f_InclusiveDecays
+    dest: st.py
+
+
+  # -------------------------------------------------- #
+  # ------------------- SIGNAL ----------------------- #
+  # -------------------------------------------------- #
+
+  # -------------------- ggfh-tautau ----------------- #
+
+  h_ggf_tautau_prod_cp_even_sm:
+    processes:
+      - procs.h_ggf_tautau
+    keys:
+      - /GluGluHToTauTau_M125
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  h_ggf_tautau_prod_cp_odd_flat:
+    processes:
+      - procs.h_ggf_tautau
+    keys:
+      - /GluGluHToTauTau_UncorrelatedDecay_CPodd_Filtered
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  h_ggf_tautau_prod_cp_even_flat:
+    processes:
+      - procs.h_ggf_tautau
+    keys:
+      - /GluGluHToTauTau_UncorrelatedDecay_SM_Filtered
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  h_ggf_tautau_prod_max_mix_flat:
+    processes:
+      - procs.h_ggf_tautau
+    keys:
+      - /GluGluHToTauTau_UncorrelatedDecay_MM_Filtered
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  # -------------------- vbfh-tautau ------------------- #
+  
+  h_vbf_tautau_sm:
+    processes:
+      - procs.h_vbf_tautau
+    keys:
+      - /VBFHToTauTau_M125
+    aux:
+      is_signal: True
+    dest: signal.py
+  
+  h_vbf_tautau_flat:
+    processes:
+      - procs.h_vbf_tautau
+    keys:
+      - /VBFHToTauTau_UncorrelatedDecay_Filtered
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  # -------------------- Wph-tautau ------------------- #
+
+  wph_tautau_sm:
+    processes:
+      - procs.wph_tautau
+    keys:
+      - /WplusHToTauTau_M125
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  wph_tautau_flat:
+    processes:
+      - procs.wph_tautau
+    keys:
+      - /WplusHToTauTau_UncorrelatedDecay_Filtered
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  # -------------------- Wmh-tautau ------------------- #
+
+  wmh_tautau_sm:
+    processes:
+      - procs.wmh_tautau
+    keys:
+      - /WminusHToTauTau_M125
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  wmh_tautau_flat:
+    processes:
+      - procs.wmh_tautau
+    keys:
+      - /WminusHToTauTau_UncorrelatedDecay_Filtered
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  # -------------------- zh-tautau ------------------- #
+
+  zh_tautau_sm:
+    processes:
+      - procs.zh_tautau
+    keys:
+      - /ZHToTauTau_M125
+      - /ZHToTauTau_M125_ext1
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  zh_tautau_flat:
+    processes:
+      - procs.zh_tautau
+    keys:
+      - /ZHToTauTau_M125
+      - /ZHToTauTau_M125_ext1
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  # -------------------- tth-tautau ------------------- #
+
+  tth_tautau_sm:
+    processes:
+      - procs.tth_tautau
+    keys:
+      - /ttHToTauTau_M125
+    aux:
+      is_signal: True
+    dest: signal.py

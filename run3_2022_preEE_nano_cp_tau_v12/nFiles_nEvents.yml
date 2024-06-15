@@ -1,0 +1,81 @@
+data_tau_C:
+  nfiles: 10
+  nevents: 25903135.0
+data_tau_D:
+  nfiles: 6
+  nevents: 16686692.0
+data_mu_C:
+  nfiles: 28
+  nevents: 138329693.0
+data_mu_D:
+  nfiles: 16
+  nevents: 75440027.0
+data_e_C:
+  nfiles: 46
+  nevents: 263549470.0
+data_e_D:
+  nfiles: 18
+  nevents: 89134996.0
+dy_lep_m50:
+  nfiles: 63
+  nevents: 145286646.0
+dy_lep_m10to50:
+  nfiles: 15
+  nevents: 52629903.0
+dy_lep_0j:
+  nfiles: 42
+  nevents: 83840818.0
+dy_lep_1j:
+  nfiles: 54
+  nevents: 46809421.0
+dy_lep_2j:
+  nfiles: 51
+  nevents: 23075468.0
+wj_incl:
+  nfiles: 24
+  nevents: 59463375.0
+ww:
+  nfiles: 5
+  nevents: 15405496.0
+wz:
+  nfiles: 3
+  nevents: 7527043.0
+zz:
+  nfiles: 1
+  nevents: 1181750.0
+tt_sl:
+  nfiles: 153
+  nevents: 165110999.0
+tt_dl:
+  nfiles: 24
+  nevents: 23890314.0
+tt_fh:
+  nfiles: 65
+  nevents: 105189265.0
+st_tchannel_t:
+  nfiles: 2
+  nevents: 2737505.0
+st_tchannel_tbar:
+  nfiles: 1
+  nevents: 1325389.0
+st_tw_t_sl:
+  nfiles: 8
+  nevents: 9643983.0
+st_tw_t_dl:
+  nfiles: 6
+  nevents: 4886868.0
+st_tw_t_fh:
+  nfiles: 2
+  nevents: 3861851.0
+st_tw_tb_sl:
+  nfiles: 8
+  nevents: 9224089.0
+st_tw_tb_dl:
+  nfiles: 6
+  nevents: 4901541.0
+st_tw_tb_fh:
+  nfiles: 5
+  nevents: 7762668.0
+h_ggf_tautau:
+  nfiles: 1
+  nevents: 295692.0

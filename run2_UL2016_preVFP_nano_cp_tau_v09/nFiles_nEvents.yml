@@ -1,0 +1,216 @@
+data_tau_B:
+  nfiles: 10
+  nevents: 19202880.0
+data_tau_C:
+  nfiles: 6
+  nevents: 10163592.0
+data_tau_D:
+  nfiles: 8
+  nevents: 15591454.0
+data_tau_E:
+  nfiles: 9
+  nevents: 16862919.0
+data_tau_F:
+  nfiles: 6
+  nevents: 10382762.0
+data_mu_B:
+  nfiles: 12
+  nevents: 27322389.0
+data_mu_C:
+  nfiles: 6
+  nevents: 12866495.0
+data_mu_D:
+  nfiles: 8
+  nevents: 18670547.0
+data_mu_E:
+  nfiles: 9
+  nevents: 19119988.0
+data_mu_F:
+  nfiles: 6
+  nevents: 12237840.0
+data_e_B:
+  nfiles: 18
+  nevents: 38714038.0
+data_e_C:
+  nfiles: 8
+  nevents: 16894559.0
+data_e_D:
+  nfiles: 12
+  nevents: 25317735.0
+data_e_E:
+  nfiles: 11
+  nevents: 22984217.0
+data_e_F:
+  nfiles: 6
+  nevents: 13043827.0
+dy_lep_lo_m50:
+  nfiles: 30
+  nevents: 39816526.0
+dy_lep_lo_m10to50:
+  nfiles: 4
+  nevents: 1141136.0
+dy_lep_lo_m50_1j:
+  nfiles: 12
+  nevents: 15382205.0
+dy_lep_lo_m50_2j:
+  nfiles: 6
+  nevents: 6824062.0
+dy_lep_lo_m50_3j:
+  nfiles: 6
+  nevents: 5894240.0
+dy_lep_lo_m50_4j:
+  nfiles: 3
+  nevents: 2818631.0
+dy_lep_nlo_m50:
+  nfiles: 31
+  nevents: 25252938.0
+dy_lep_nlo_m10to50:
+  nfiles: 9
+  nevents: 1676175.0
+dy_lep_nlo_0j:
+  nfiles: 24
+  nevents: 24708588.0
+dy_lep_nlo_1j:
+  nfiles: 35
+  nevents: 20952336.0
+dy_lep_nlo_2j:
+  nfiles: 21
+  nevents: 7373841.0
+wj_lo_incl:
+  nfiles: 14
+  nevents: 5641399.0
+wj_lo_1j:
+  nfiles: 10
+  nevents: 5849005.0
+wj_lo_2j:
+  nfiles: 7
+  nevents: 5180241.0
+wj_lo_3j:
+  nfiles: 5
+  nevents: 4093378.0
+wj_lo_4j:
+  nfiles: 2
+  nevents: 1448279.0
+wj_nlo_incl:
+  nfiles: 6
+  nevents: 1613844.0
+wj_nlo_0j:
+  nfiles: 26
+  nevents: 6944450.0
+wj_nlo_1j:
+  nfiles: 41
+  nevents: 13849373.0
+wj_nlo_2j:
+  nfiles: 27
+  nevents: 6779563.0
+ewk_wmtolnu:
+  nfiles: 1
+  nevents: 699525.0
+ewk_wptolnu:
+  nfiles: 1
+  nevents: 710320.0
+ewk_zll:
+  nfiles: 1
+  nevents: 307823.0
+ww_incl:
+  nfiles: 4
+  nevents: 3776690.0
+ww_lnulnu:
+  nfiles: 2
+  nevents: 1583155.0
+ww_lnuqq:
+  nfiles: 8
+  nevents: 3651801.0
+ww_qqqq:
+  nfiles: 6
+  nevents: 1488134.0
+wz_incl:
+  nfiles: 2
+  nevents: 1709664.0
+wz_qqll:
+  nfiles: 8
+  nevents: 4278966.0
+wz_lllnu:
+  nfiles: 5
+  nevents: 2793736.0
+wz_lnuqq:
+  nfiles: 2
+  nevents: 702691.0
+zz_incl:
+  nfiles: 1
+  nevents: 273200.0
+zz_llll:
+  nfiles: 20
+  nevents: 21062414.0
+zz_llnunu:
+  nfiles: 7
+  nevents: 7019901.0
+zz_llqq:
+  nfiles: 8
+  nevents: 4894991.0
+zz_qqqq:
+  nfiles: 1
+  nevents: 71852.0
+zz_qqnunu:
+  nfiles: 1
+  nevents: 163593.0
+tt_sl:
+  nfiles: 79
+  nevents: 67797898.0
+tt_dl:
+  nfiles: 28
+  nevents: 29183604.0
+tt_fh:
+  nfiles: 39
+  nevents: 20556738.0
+st_tchannel_t:
+  nfiles: 18
+  nevents: 9273634.0
+st_tchannel_tbar:
+  nfiles: 10
+  nevents: 5430866.0
+st_tw_t:
+  nfiles: 2
+  nevents: 854247.0
+st_tw_tb:
+  nfiles: 2
+  nevents: 854509.0
+h_ggf_tautau_prod_cp_even_sm:
+  nfiles: 3
+  nevents: 3185667.0
+h_ggf_tautau_prod_cp_odd_flat:
+  nfiles: 10
+  nevents: 10774828.0
+h_ggf_tautau_prod_cp_even_flat:
+  nfiles: 8
+  nevents: 8653419.0
+h_ggf_tautau_prod_max_mix_flat:
+  nfiles: 12
+  nevents: 13680497.0
+h_vbf_tautau_sm:
+  nfiles: 1
+  nevents: 856813.0
+h_vbf_tautau_flat:
+  nfiles: 7
+  nevents: 8549354.0
+wph_tautau_sm:
+  nfiles: 2
+  nevents: 1177944.0
+wph_tautau_flat:
+  nfiles: 2
+  nevents: 1408737.0
+wmh_tautau_sm:
+  nfiles: 2
+  nevents: 1268247.0
+wmh_tautau_flat:
+  nfiles: 1
+  nevents: 1038090.0
+zh_tautau_sm:
+  nfiles: 4
+  nevents: 2916481.0
+zh_tautau_flat:
+  nfiles: 4
+  nevents: 2916481.0
+tth_tautau_sm:
+  nfiles: 12
+  nevents: 9381365.0

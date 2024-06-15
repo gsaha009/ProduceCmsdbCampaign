@@ -19,8 +19,8 @@ store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2023BPix
 # era
 era: 2023
 nanoaod: 12
-# year (YR) version (nanoaod) UniqueNo (ZZZ)
-campaign_id: 2312002
+# year (YR) version (nanoaod) UniqueNo (ZZ)
+campaign_id: 231202
 
 datasets_info: 
   # -------------------------------------------------- #
@@ -30,7 +30,6 @@ datasets_info:
   # ------------ tau dataset -------------- #
 
   data_tau_D:
-    id: 11
     processes:
       - procs.data_tau
     keys:
@@ -46,7 +45,6 @@ datasets_info:
   # ------------ mu dataset ------------- #
 
   data_mu0_D:
-    id: 20
     processes:
       - procs.data_mu
     keys:
@@ -59,7 +57,6 @@ datasets_info:
     dest: data.py
 
   data_mu1_D:
-    id: 21
     processes:
       - procs.data_mu
     keys:
@@ -74,7 +71,6 @@ datasets_info:
   # ------------- e dataset -------------- #
 
   data_e0_D: 
-    id: 30
     processes:
       - procs.data_e
     keys:
@@ -89,7 +85,6 @@ datasets_info:
 
 
   data_e1_D: 
-    id: 31
     processes:
       - procs.data_e
     keys:
@@ -107,7 +102,6 @@ datasets_info:
   # -------------------------------------------------- #
 
   dy_lep_m50:
-    id: 201
     processes:
       - procs.dy_lep_m50
     keys:
@@ -115,7 +109,6 @@ datasets_info:
     dest: dy.py
 
   dy_lep_m10to50:
-    id: 202
     processes:
       - procs.dy_lep_m10to50
     keys:
@@ -123,7 +116,6 @@ datasets_info:
     dest: dy.py
 
   dy_lep_0j:
-    id: 203
     processes:
       - procs.dy_lep_m50_0j
     keys:
@@ -131,7 +123,6 @@ datasets_info:
     dest: dy.py
 
   dy_lep_1j:
-    id: 204
     processes:
       - procs.dy_lep_m50_1j
     keys:
@@ -139,7 +130,6 @@ datasets_info:
     dest: dy.py
 
   dy_lep_2j:
-    id: 205
     processes:
       - procs.dy_lep_m50_2j
     keys:
@@ -152,7 +142,6 @@ datasets_info:
   # -------------------------------------------------- #
 
   wj_incl:
-    id: 300
     processes:
       - procs.w_lnu
     keys:
@@ -164,7 +153,6 @@ datasets_info:
   # -------------------------------------------------- #
 
   ww:
-    id: 400
     processes:
       - procs.ww
     keys:
@@ -172,7 +160,6 @@ datasets_info:
     dest: vv.py
     
   wz:
-    id: 410
     processes:
       - procs.wz
     keys:
@@ -180,7 +167,6 @@ datasets_info:
     dest: vv.py
 
   zz:
-    id: 420
     processes:
       - procs.zz
     keys:
@@ -193,7 +179,6 @@ datasets_info:
   # -------------------------------------------------- #
 
   tt_sl: 
-    id: 430
     processes:
       - procs.tt_sl
     keys: 
@@ -201,7 +186,6 @@ datasets_info:
     dest: tt.py
 
   tt_dl: 
-    id: 431
     processes:
       - procs.tt_dl
     keys: 
@@ -209,7 +193,6 @@ datasets_info:
     dest: tt.py
 
   tt_fh: 
-    id: 432
     processes: 
       - procs.tt_fh
     keys: 
@@ -223,7 +206,6 @@ datasets_info:
   # single top
   
   #st_tchannel_t: 
-  #  id: 450
   #  processes: 
   #    - procs.st_tchannel_t
   #  keys: 
@@ -231,7 +213,6 @@ datasets_info:
   #  dest: st.py
 
   #st_tchannel_tbar: 
-  #  id: 451
   #  processes:
   #    - procs.st_tchannel_tbar
   #  keys: 
@@ -244,7 +225,6 @@ datasets_info:
   # -------------------------------------------------- #
 
   st_tw_t_sl: 
-    id: 460
     processes:
       - procs.st_twchannel_t_sl
     keys: 
@@ -252,7 +232,6 @@ datasets_info:
     dest: st.py
 
   st_tw_t_dl: 
-    id: 461
     processes:
       - procs.st_twchannel_t_dl
     keys: 
@@ -260,7 +239,6 @@ datasets_info:
     dest: st.py
 
   st_tw_t_fh: 
-    id: 462
     processes:
       - procs.st_twchannel_t_fh
     keys: 
@@ -271,7 +249,6 @@ datasets_info:
   # t~w
 
   st_tw_tb_sl: 
-    id: 463
     processes:
       - procs.st_twchannel_tbar_sl
     keys: 
@@ -279,7 +256,6 @@ datasets_info:
     dest: st.py
 
   st_tw_tb_dl: 
-    id: 464
     processes:
       - procs.st_twchannel_tbar_dl
     keys: 
@@ -287,7 +263,6 @@ datasets_info:
     dest: st.py
 
   st_tw_tb_fh: 
-    id: 465
     processes:
       - procs.st_twchannel_tbar_fh
     keys: 
@@ -300,7 +275,6 @@ datasets_info:
   # -------------------------------------------------- #
 
   h_ggf_tautau_prod_cp_even_sm:
-    id: 1001
     processes:
       - procs.h_ggf_tautau
     keys:
@@ -311,7 +285,6 @@ datasets_info:
 
 
   h_ggf_tautau_flat:
-    id: 1002
     processes:
       - procs.h_ggf_tautau
     keys:
