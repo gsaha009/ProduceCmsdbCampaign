@@ -19,6 +19,7 @@ store_path: /eos/cms/store/group/phys_higgs/HLepRare/HTT_skim_v1/Run2_2016_HIPM
 # era
 era: 2016
 nanoaod: 9
+postfix: preVFP
 # year (YR) version (nanoaod) UniqueNo (ZZ: e.g. PreVFP 01, PostVFP 02)
 campaign_id: 160901
 

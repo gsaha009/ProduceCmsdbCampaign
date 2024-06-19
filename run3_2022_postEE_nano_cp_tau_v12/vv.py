@@ -2,14 +2,14 @@
 # Link: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022EE
 
 import cmsdb.processes as procs
-from cmsdb.campaigns.run3_2022_postEE_nano_tau_v14 import campaign_run3_2022_postEE_nano_tau_v14 as cpn
+from cmsdb.campaigns.run3_2022_postEE_nano_cp_tau_v12 import campaign_run3_2022_postEE_nano_cp_tau_v12 as cpn
 
 
 
 
 cpn.add_dataset(
     name='ww',
-    id=22140213,
+    id=22120213,
     is_data=False,
     processes=[procs.ww],
     keys=['/WW'],
@@ -20,7 +20,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='wz',
-    id=22140214,
+    id=22120214,
     is_data=False,
     processes=[procs.wz],
     keys=['/WZ'],
@@ -31,7 +31,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='zz',
-    id=22140215,
+    id=22120215,
     is_data=False,
     processes=[procs.zz],
     keys=['/ZZ'],

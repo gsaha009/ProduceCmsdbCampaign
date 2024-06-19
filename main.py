@@ -50,7 +50,8 @@ campaign_id = config.get("campaign_id")
 logger.info(f"campaign_id: {campaign_id}")
 ecm = 13 if era < 2022 else 13.6
 logger.info(f"ecm: {ecm}")
-
+postfix = config.get("postfix")
+logger.info(f"postfix: {postfix}")
 
 utilconfigfile = os.path.join(campaign_dir, args.utilconfig)
 fileisthere = os.path.exists(utilconfigfile)
@@ -94,6 +95,7 @@ with open(os.path.join(campaign_dir, "__init__.py"), 'w') as _f:
     _f.write("aux={\n       ")
     _f.write(f""" "tier": "NanoAOD", """+"\n       ")
     _f.write(f""" "year": {era},"""+"\n       ")
+    _f.write(f""" "postfix": {postfix},"""+"\n       ")
     _f.write(f""" "version": {nanoaod_version},"""+"\n       ")
     _f.write(""" "custom": {"""+"\n           ")
     _f.write(f""" "name": "{campaign_name}","""+"\n           ")

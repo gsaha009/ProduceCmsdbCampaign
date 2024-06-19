@@ -14,6 +14,7 @@ campaign_run2_UL2016_postVFP_nano_cp_tau_v09 = Campaign(
     aux={
         "tier": "NanoAOD", 
         "year": 2016,
+        "postfix": postVFP,
         "version": 9,
         "custom": {
             "name": "run2_UL2016_postVFP_nano_cp_tau_v09",

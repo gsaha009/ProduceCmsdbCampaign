@@ -12,8 +12,9 @@ campaign_run3_2022_postEE_nano_cp_tau_v12 = Campaign(
     ecm=13.6,
     bx=25,
     aux={
-        "tier": "NanoAOD",
+        "tier": "NanoAOD", 
         "year": 2022,
+        "postfix": postEE,
         "version": 12,
         "custom": {
             "name": "run3_2022_postEE_nano_cp_tau_v12",

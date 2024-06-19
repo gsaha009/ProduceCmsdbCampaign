@@ -2,14 +2,14 @@
 # Link: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022EE
 
 import cmsdb.processes as procs
-from cmsdb.campaigns.run3_2022_postEE_nano_tau_v14 import campaign_run3_2022_postEE_nano_tau_v14 as cpn
+from cmsdb.campaigns.run3_2022_postEE_nano_cp_tau_v12 import campaign_run3_2022_postEE_nano_cp_tau_v12 as cpn
 
 
 
 
 cpn.add_dataset(
     name='wj_incl',
-    id=22140212,
+    id=22120212,
     is_data=False,
     processes=[procs.w_lnu],
     keys=['/WtoLNu_amcatnloFXFX'],

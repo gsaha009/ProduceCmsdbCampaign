@@ -13,12 +13,13 @@
 
 
 # name of the campaign to be created
-campaign: run3_2023_postBPix_nano_tau_v12
+campaign: run3_2023_postBPix_nano_cp_tau_v12
 # path of the nanoaod samples
 store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2023BPix
 # era
 era: 2023
 nanoaod: 12
+postfix: postBPix
 # year (YR) version (nanoaod) UniqueNo (ZZ)
 campaign_id: 231202
 

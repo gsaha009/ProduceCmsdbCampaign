@@ -14,6 +14,7 @@ campaign_run3_2022_preEE_nano_cp_tau_v12 = Campaign(
     aux={
         "tier": "NanoAOD", 
         "year": 2022,
+        "postfix": preEE,
         "version": 12,
         "custom": {
             "name": "run3_2022_preEE_nano_cp_tau_v12",

@@ -2,7 +2,7 @@
 # Link: /eos/cms/store/group/phys_higgs/HLepRare/HTT_skim_v1/Run2_2016_HIPM
 
 import cmsdb.processes as procs
-from cmsdb.campaigns.run2_UL2016_preVFP_nano_tau_v09 import campaign_run2_UL2016_preVFP_nano_tau_v09 as cpn
+from cmsdb.campaigns.run2_UL2016_preVFP_nano_cp_tau_v09 import campaign_run2_UL2016_preVFP_nano_cp_tau_v09 as cpn
 
 
 

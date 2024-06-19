@@ -2,14 +2,14 @@
 # Link: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022EE
 
 import cmsdb.processes as procs
-from cmsdb.campaigns.run3_2022_postEE_nano_tau_v14 import campaign_run3_2022_postEE_nano_tau_v14 as cpn
+from cmsdb.campaigns.run3_2022_postEE_nano_cp_tau_v12 import campaign_run3_2022_postEE_nano_cp_tau_v12 as cpn
 
 
 
 
 cpn.add_dataset(
     name='dy_lep_m50',
-    id=2214027,
+    id=2212027,
     is_data=False,
     processes=[procs.dy_lep_m50],
     keys=['/DYto2L_M-50_amcatnloFXFX'],
@@ -20,7 +20,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='dy_lep_m10to50',
-    id=2214028,
+    id=2212028,
     is_data=False,
     processes=[procs.dy_lep_m10to50],
     keys=['/DYto2L_M-10to50_amcatnloFXFX'],
@@ -31,7 +31,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='dy_lep_0j',
-    id=2214029,
+    id=2212029,
     is_data=False,
     processes=[procs.dy_lep_m50_0j],
     keys=['/DYto2L_M-50_0J_amcatnloFXFX'],
@@ -42,7 +42,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='dy_lep_1j',
-    id=22140210,
+    id=22120210,
     is_data=False,
     processes=[procs.dy_lep_m50_1j],
     keys=['/DYto2L_M-50_1J_amcatnloFXFX'],
@@ -53,7 +53,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='dy_lep_2j',
-    id=22140211,
+    id=22120211,
     is_data=False,
     processes=[procs.dy_lep_m50_2j],
     keys=['/DYto2L_M-50_2J_amcatnloFXFX'],

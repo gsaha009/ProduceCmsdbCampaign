@@ -2,14 +2,14 @@
 # Link: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022EE
 
 import cmsdb.processes as procs
-from cmsdb.campaigns.run3_2022_postEE_nano_tau_v14 import campaign_run3_2022_postEE_nano_tau_v14 as cpn
+from cmsdb.campaigns.run3_2022_postEE_nano_cp_tau_v12 import campaign_run3_2022_postEE_nano_cp_tau_v12 as cpn
 
 
 
 
 cpn.add_dataset(
     name='data_tau_E',
-    id=2214020,
+    id=2212020,
     is_data=True,
     processes=[procs.data_tau],
     keys=['/Tau_Run2022E'],
@@ -20,7 +20,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_tau_F',
-    id=2214021,
+    id=2212021,
     is_data=True,
     processes=[procs.data_tau],
     keys=['/Tau_Run2022F'],
@@ -31,7 +31,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_tau_G',
-    id=2214022,
+    id=2212022,
     is_data=True,
     processes=[procs.data_tau],
     keys=['/Tau_Run2022G'],
@@ -42,7 +42,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_mu_E',
-    id=2214023,
+    id=2212023,
     is_data=True,
     processes=[procs.data_mu],
     keys=['/Muon_Run2022E'],
@@ -53,7 +53,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_mu_G',
-    id=2214024,
+    id=2212024,
     is_data=True,
     processes=[procs.data_mu],
     keys=['/Muon_Run2022G'],
@@ -64,7 +64,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_e_E',
-    id=2214025,
+    id=2212025,
     is_data=True,
     processes=[procs.data_e],
     keys=['/EGamma_Run2022E'],
@@ -75,7 +75,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_e_G',
-    id=2214026,
+    id=2212026,
     is_data=True,
     processes=[procs.data_e],
     keys=['/EGamma_Run2022G'],

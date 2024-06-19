@@ -19,6 +19,7 @@ store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v1/Run3_2022EE
 # era
 era: 2022
 nanoaod: 12
+postfix: postEE
 # year (YR) version (nanoaod) UniqueNo (ZZ)
 campaign_id: 221202
 

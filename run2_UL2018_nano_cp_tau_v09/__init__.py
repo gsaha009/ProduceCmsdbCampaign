@@ -14,6 +14,7 @@ campaign_run2_UL2018_nano_cp_tau_v09 = Campaign(
     aux={
         "tier": "NanoAOD", 
         "year": 2018,
+        "postfix": None,
         "version": 9,
         "custom": {
             "name": "run2_UL2018_nano_cp_tau_v09",
