@@ -37,9 +37,9 @@ datasets_info:
       - /Tau_Run2022C
     aux:
       era: C
-      require_triggers:
-        - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
-        - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
   data_tau_D:
@@ -49,13 +49,25 @@ datasets_info:
       - /Tau_Run2022D
     aux:
       era: D
-      require_triggers:
-        - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
-        - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
 
   # ---------- mu dataset ---------- #
+
+  data_single_mu_C:
+    processes:
+      - procs.data_mu
+    keys:
+      - /SingleMuon_Run2022C
+    aux:
+      era: C
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
 
   data_mu_C:
     processes:
@@ -114,7 +126,16 @@ datasets_info:
   # ----------------------- DY ----------------------- #
   # -------------------------------------------------- #
 
-  dy_lep_m50:
+  # -----> Low Mass
+  dy_lep_m10to50_madgraph:
+    processes:
+      - procs.dy_lep_m10to50
+    keys:
+      - /DYto2L_M-10to50_madgraphMLM
+    dest: dy.py
+
+  # -----> M50-LO-inclusive
+  dy_lep_m50_madgraph:
     processes:
       - procs.dy_lep_m50
     keys:
@@ -122,40 +143,56 @@ datasets_info:
       - /DYto2L_M-50_madgraphMLM_ext1
     dest: dy.py
 
-  dy_lep_m10to50:
-    processes:
-      - procs.dy_lep_m10to50
-    keys:
-      - /DYto2L_M-10to50_amcatnloFXFX
-    dest: dy.py
+  # -----> M50-NLO-inclusive
+  #dy_lep_m50_amcatnlo:
+  #  processes:
+  #    - procs.dy_lep_m50
+  #  keys:
+  #    - /DYto2L_M-50_amcatnloFXFX
+  #  dest: dy.py
 
-  dy_lep_0j:
-    processes:
-      - procs.dy_lep_m50_0j
-    keys:
-      - /DYto2L_M-50_0J_amcatnloFXFX
-    dest: dy.py
+  # -----> jet binned LO
+  #dy_lep_m50_1j_madgraph:
+  #  processes:
+  #    - procs.dy_lep_m50_1j
+  #  keys:
+  #    - /DYto2L_M-50_1J_madgraphMLM
+  #  dest: dy.py
 
-  dy_lep_1j:
-    processes:
-      - procs.dy_lep_m50_1j
-    keys:
-      - /DYto2L_M-50_1J_amcatnloFXFX
-    dest: dy.py
+  #dy_lep_m50_2j_madgraph:
+  #  processes:
+  #    - procs.dy_lep_m50_2j
+  #  keys:
+  #    - /DYto2L_M-50_2J_madgraphMLM
+  #  dest: dy.py
 
-  dy_lep_2j:
-    processes:
-      - procs.dy_lep_m50_2j
-    keys:
-      - /DYto2L_M-50_2J_amcatnloFXFX
-    dest: dy.py
+  #dy_lep_m50_3j_madgraph:
+  #  processes:
+  #    - procs.dy_lep_m50_3j
+  #  keys:
+  #    - /DYto2L_M-50_3J_madgraphMLM
+  #  dest: dy.py
 
+  #dy_lep_m50_4j_madgraph:
+  #  processes:
+  #    - procs.dy_lep_m50_4j
+  #  keys:
+  #    - /DYto2L_M-50_4J_madgraphMLM
+  #  dest: dy.py
 
   # -------------------------------------------------- #
   # ----------------------- WJ ----------------------- #
   # -------------------------------------------------- #
 
-  wj_incl:
+  wj_incl_madgraph:
+    processes:
+      - procs.w_lnu
+    keys:
+      - /WtoLNu_madgraphMLM
+      - /WtoLNu_madgraphMLM_ext1
+    dest: wj.py
+
+  wj_incl_amcatnlo:
     processes:
       - procs.w_lnu
     keys:
@@ -204,7 +241,7 @@ datasets_info:
     processes:
       - procs.tt_dl
     keys: 
-      - /TTTo2L2Nu
+      - /TTto2L2Nu
       - /TTto2L2Nu_ext1
     dest: tt.py
 
@@ -243,7 +280,7 @@ datasets_info:
 
   st_tw_t_sl: 
     processes:
-      - procs.st_twchannel_t_sl
+      - procs.st_twchannel_t
     keys: 
       - /ST_tW_top_LNu2Q
       - /ST_tW_top_LNu2Q_ext1
@@ -251,7 +288,7 @@ datasets_info:
 
   st_tw_t_dl: 
     processes:
-      - procs.st_twchannel_t_dl
+      - procs.st_twchannel_t
     keys: 
       - /ST_tW_top_2L2Nu
       - /ST_tW_top_2L2Nu_ext1
@@ -259,18 +296,17 @@ datasets_info:
 
   st_tw_t_fh: 
     processes:
-      - procs.st_twchannel_t_fh
+      - procs.st_twchannel_t
     keys: 
       - /ST_tW_top_4Q
       - /ST_tW_top_4Q_ext1
     dest: st.py
 
-
   # --------------- t~w --------------- #
 
   st_tw_tb_sl: 
     processes:
-      - procs.st_twchannel_tbar_sl
+      - procs.st_twchannel_tbar
     keys: 
       - /ST_tW_antitop_LNu2Q
       - /ST_tW_antitop_LNu2Q_ext1
@@ -278,7 +314,7 @@ datasets_info:
 
   st_tw_tb_dl: 
     processes:
-      - procs.st_twchannel_tbar_dl
+      - procs.st_twchannel_tbar
     keys: 
       - /ST_tW_antitop_2L2Nu
       - /ST_tW_antitop_2L2Nu_ext1
@@ -286,22 +322,30 @@ datasets_info:
 
   st_tw_tb_fh: 
     processes:
-      - procs.st_twchannel_tbar_fh
+      - procs.st_twchannel_tbar
     keys: 
       - /ST_tW_antitop_4Q
       - /ST_tW_antitop_4Q_ext1
     dest: st.py
 
-
   # -------------------------------------------------- #
   # ------------------- SIGNAL ----------------------- #
   # -------------------------------------------------- #
 
-  h_ggf_tautau:
+  h_ggf_tautau_prod_cp_even_sm:
     processes:
       - procs.h_ggf_tautau
     keys:
       - /GluGluHToTauTau_M125
+    aux:
+      is_signal: True
+    dest: signal.py
+
+  h_ggf_tautau_uncorrelated_filter:
+    processes:
+      - procs.h_ggf_tautau
+    keys:
+      - /GluGluHTo2Tau_UncorrelatedDecay_Filtered
     aux:
       is_signal: True
     dest: signal.py

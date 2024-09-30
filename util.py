@@ -8,6 +8,7 @@ import numpy as np
 import awkward as ak
 from time import sleep
 from tqdm import tqdm
+from typing import Optional
 from IPython import embed
 from joblib import Parallel, delayed
 from subprocess import Popen, PIPE
@@ -61,42 +62,73 @@ def runShellCmd(cmdList):
 
 
 def get_nfiles_nevents_per_file(rootfile : str, isData: bool) -> float:
+    nEv_sel_tree = 0.0
+    nEv_nsel_tree = 0.0
     sumGenWt_sel_tree  = 0.0
     sumGenWt_nsel_tree = 0.0
 
+    logger.info(f"\n\nfile : {rootfile}")
     upfile = uproot.open(rootfile)
 
-    sel_events = upfile["Events"]
+    sel_events_array = upfile["Events"]
+    sel_event_column = sel_events_array.arrays(["event"])
+    sel_nevents      = len(sel_event_column)
     if isData:
-        sel_events = sel_events.arrays(["event"]) 
-        sumGenWt_sel_tree = len(sel_events)
+        sumGenWt_sel_tree = sel_nevents
+        nEv_sel_tree      = sumGenWt_sel_tree
     else:
-        sel_events = sel_events.arrays(["genWeight"])     
-        genWt_sel_tree = sel_events["genWeight"]
-        genWt_sel_tree = ak.where(genWt_sel_tree > 0., 1., ak.where(genWt_sel_tree < 0., -1., genWt_sel_tree))
+        sel_genwt_column = sel_events_array.arrays(["genWeight"])     
+        genWt_sel_tree   = sel_genwt_column["genWeight"]
+        genWt_sel_tree   = ak.where(genWt_sel_tree > 0.,
+                                    1.,
+                                    ak.where(genWt_sel_tree < 0.,
+                                             -1.,
+                                             genWt_sel_tree))
         sumGenWt_sel_tree = ak.sum(genWt_sel_tree)
+        nEv_sel_tree = sel_nevents
 
+    logger.info(f"sumGenWt_sel_tree : {sumGenWt_sel_tree}")
+    logger.info(f"nEvents_sel_tree  : {nEv_sel_tree}")
+    
     nsel_events = None
 
-    if "EventsNotSelected" in list(upfile.keys()):
-        nsel_events = upfile["EventsNotSelected"]
-        if isData and "":
-            nsel_events = nsel_events.arrays()
-            sumGenWt_nsel_tree = len(nsel_events)
-        else:
-            nsel_events = nsel_events.arrays(["genWeight"])
-            genWt_nsel_tree = nsel_events["genWeight"]
-            genWt_nsel_tree = ak.where(genWt_nsel_tree > 0., 1., ak.where(genWt_nsel_tree < 0., -1., genWt_nsel_tree))
-            sumGenWt_nsel_tree = ak.sum(genWt_nsel_tree)
-        
-    sumWt   = sumGenWt_sel_tree + sumGenWt_nsel_tree
+    _keys = list(upfile.keys())
+    _keys = [s.split(';')[0] for s in _keys]
+    logger.info(f"keys : {_keys}")
 
+    if "EventsNotSelected" in _keys:
+        nsel_events_array = upfile["EventsNotSelected"]
+        
+        if isData:
+            nsel_run_column = nsel_events_array.arrays(["run"])
+            sumGenWt_nsel_tree = len(nsel_run_column)
+            nEv_nsel_tree = sumGenWt_nsel_tree
+        else:
+            nsel_genwt_column = nsel_events_array.arrays(["genWeight"])
+            genWt_nsel_tree = nsel_genwt_column["genWeight"]
+            genWt_nsel_tree = ak.where(genWt_nsel_tree > 0.,
+                                       1.,
+                                       ak.where(genWt_nsel_tree < 0.,
+                                                -1.,
+                                                genWt_nsel_tree))
+            sumGenWt_nsel_tree = ak.sum(genWt_nsel_tree)
+            nEv_nsel_tree = len(genWt_nsel_tree)
+
+
+    logger.info(f"sumGenWt_nsel_tree : {sumGenWt_nsel_tree}")
+    logger.info(f"nEvents_nsel_tree  : {nEv_nsel_tree}")
+    
+    sumWt   = sumGenWt_sel_tree + sumGenWt_nsel_tree
+    logger.info(f"sumWt : {sumWt}")
+    nEvts   = nEv_sel_tree + nEv_nsel_tree
+    logger.info(f"nEvts : {nEvts}")
+    
     time.sleep(0.01)
 
-    return sumWt
+    return [sumWt, nEvts]
 
 
-def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
+def get_nfiles_nevents(rootfiledirs, isData: bool, cores: Optional[int] = 1) -> tuple[int, float]:
     nTotalFiles = 0
     sumGenWeights = 0.0
     root_files = []
@@ -105,7 +137,9 @@ def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
         logger.info(f"files dir: {filedir}")
         _root_files = glob.glob(f"{filedir}/*.root")
         root_files = root_files + _root_files
-    sumWt_list = Parallel(n_jobs=3)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
+
+    #sumWt_list = Parallel(n_jobs=cores)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
+    sumWt_nEvt_list = Parallel(n_jobs=cores)(delayed(get_nfiles_nevents_per_file)(root_files[i], isData) for i in tqdm(range(len(root_files))))
     """
     for i in tqdm(range(len(root_files))):
         #for i, file in enumerate(root_files):
@@ -115,10 +149,19 @@ def get_nfiles_nevents(rootfiledirs, isData: bool) -> tuple[int, float]:
         sumGenWeights += wt
         sleep(0.01)
     """
-    sumWt_array = ak.Array(sumWt_list)
+    #sumWt_array = ak.Array(sumWt_list)
+    sumWt_nEvt_array = ak.to_regular(ak.Array(sumWt_nEvt_list))
+    sumWt_array = sumWt_nEvt_array[:,0]
+    nevts_array = sumWt_nEvt_array[:,1]
     nTotalFiles = len(sumWt_array)
     sumGenWeights = ak.sum(sumWt_array)
+    sumEvts = ak.sum(nevts_array)
     end = time.time()
+
+    logger.info(f"\n\nCombining ...")
+    logger.info(f"nfiles: {nTotalFiles}")
+    logger.info(f"sumGenWeights : {sumGenWeights}")
+    logger.info(f"nEvents       : {sumEvts}")
     logger.info(f"getting sumWt in {round((end-start)/60, 3)} mins")
 
     return nTotalFiles, sumGenWeights

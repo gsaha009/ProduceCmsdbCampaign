@@ -15,7 +15,7 @@ cpn.add_dataset(
     keys=['/Tau_Run2022C'],
     n_files=10,
     n_events=25903135.0,
-    aux={'era': 'C', 'require_triggers': ['DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1', 'DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1']}
+    aux={'era': 'C'}
 )
 
 cpn.add_dataset(
@@ -26,12 +26,23 @@ cpn.add_dataset(
     keys=['/Tau_Run2022D'],
     n_files=6,
     n_events=16686692.0,
-    aux={'era': 'D', 'require_triggers': ['DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1', 'DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1']}
+    aux={'era': 'D'}
+)
+
+cpn.add_dataset(
+    name='data_single_mu_C',
+    id=2212012,
+    is_data=True,
+    processes=[procs.data_mu],
+    keys=['/SingleMuon_Run2022C'],
+    n_files=4,
+    n_events=20162441.0,
+    aux={'era': 'C'}
 )
 
 cpn.add_dataset(
     name='data_mu_C',
-    id=2212012,
+    id=2212013,
     is_data=True,
     processes=[procs.data_mu],
     keys=['/Muon_Run2022C'],
@@ -42,7 +53,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_mu_D',
-    id=2212013,
+    id=2212014,
     is_data=True,
     processes=[procs.data_mu],
     keys=['/Muon_Run2022D'],
@@ -53,7 +64,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_e_C',
-    id=2212014,
+    id=2212015,
     is_data=True,
     processes=[procs.data_e],
     keys=['/EGamma_Run2022C'],
@@ -64,7 +75,7 @@ cpn.add_dataset(
 
 cpn.add_dataset(
     name='data_e_D',
-    id=2212015,
+    id=2212016,
     is_data=True,
     processes=[procs.data_e],
     keys=['/EGamma_Run2022D'],

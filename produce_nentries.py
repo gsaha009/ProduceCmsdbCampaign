@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import glob
 import yaml
@@ -18,8 +19,14 @@ parser.add_argument("-c",
                     action='store', required=True, type=str,
                     help="yaml config")
 
+parser.add_argument("-w",
+                    "--workers",
+                    action='store', required=False, type=int, default=1,
+                    help="n threads")
+
 args = parser.parse_args()
 
+cores = args.workers
 yaml_path = args.config
 config = load_config(yaml_path)
 campaign_name = config.get("campaign")
@@ -46,12 +53,12 @@ logger.info(f"Location of NanoAODs: {store_path}")
 datasets_tobefilled = config.get("datasets_info")
 nEvt_dict = {}
 for dataset_key, dataset_val in datasets_tobefilled.items():
-    logger.info("\n\n")
+    logger.info("\n\n\n\n")
     logger.info(f"dataset name: {dataset_key}")
-    isDATA = True if 'data' in dataset_key else False
-
+    #isDATA = True if 'data' in dataset_key else False
+    isDATA = bool(re.match('^data_', dataset_key))
     dataset_full_paths        = [store_path+key for key in dataset_val.get("keys")]
-    nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA)
+    nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
 
     nEvt_dict[dataset_key] = {"nfiles": int(nfiles), "nevents": float(nevents) }
 
