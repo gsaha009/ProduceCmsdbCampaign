@@ -14,8 +14,8 @@ cpn.add_dataset(
     processes=[procs.ww],
     keys=['/WW'],
     n_files=10,
-    n_events=15405496.0,
-    aux=None
+    n_events=15405496.0, # this n_events is the gensumwt
+    aux={'n_events': 15405496} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -25,8 +25,8 @@ cpn.add_dataset(
     processes=[procs.ww_dl],
     keys=['/WWto2L2Nu_powheg', '/WWto2L2Nu_powheg_ext1'],
     n_files=17,
-    n_events=12732644.0,
-    aux=None
+    n_events=12732644.0, # this n_events is the gensumwt
+    aux={'n_events': 12735192} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -36,8 +36,8 @@ cpn.add_dataset(
     processes=[procs.ww_sl],
     keys=['/WWtoLNu2Q_powheg', '/WWtoLNu2Q_powheg_ext1'],
     n_files=58,
-    n_events=53661178.0,
-    aux=None
+    n_events=53661178.0, # this n_events is the gensumwt
+    aux={'n_events': 53671760} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -47,8 +47,8 @@ cpn.add_dataset(
     processes=[procs.ww_fh],
     keys=['/WWto4Q_powheg', '/WWto4Q_powheg_ext1'],
     n_files=58,
-    n_events=56360585.0,
-    aux=None
+    n_events=56360585.0, # this n_events is the gensumwt
+    aux={'n_events': 56371745} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -58,8 +58,8 @@ cpn.add_dataset(
     processes=[procs.ww_sl],
     keys=['/WWtoLNu2Q_amcatnloFXFX'],
     n_files=28,
-    n_events=14248541.0,
-    aux=None
+    n_events=14248541.0, # this n_events is the gensumwt
+    aux={'n_events': 23835113} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -69,8 +69,8 @@ cpn.add_dataset(
     processes=[procs.ww_fh],
     keys=['/WWto4Q_amcatnloFXFX'],
     n_files=9,
-    n_events=6813648.0,
-    aux=None
+    n_events=6813648.0, # this n_events is the gensumwt
+    aux={'n_events': 11293022} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -80,8 +80,8 @@ cpn.add_dataset(
     processes=[procs.wz],
     keys=['/WZ'],
     n_files=5,
-    n_events=7479528.0,
-    aux=None
+    n_events=7479528.0, # this n_events is the gensumwt
+    aux={'n_events': 7479528} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -91,8 +91,8 @@ cpn.add_dataset(
     processes=[procs.wz_wlnu_zll],
     keys=['/WZto3LNu_powheg'],
     n_files=4,
-    n_events=2791528.0,
-    aux=None
+    n_events=2791528.0, # this n_events is the gensumwt
+    aux={'n_events': 2797132} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -102,8 +102,8 @@ cpn.add_dataset(
     processes=[procs.wz_wqq_zll],
     keys=['/WZto2L2Q_powheg', '/WZto2L2Q_powheg_ext1'],
     n_files=10,
-    n_events=8432772.0,
-    aux=None
+    n_events=8432772.0, # this n_events is the gensumwt
+    aux={'n_events': 8441558} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -113,8 +113,8 @@ cpn.add_dataset(
     processes=[procs.wz_wlnu_zqq],
     keys=['/WZtoLNu2Q_powheg', '/WZtoLNu2Q_powheg_ext1'],
     n_files=19,
-    n_events=17619082.0,
-    aux=None
+    n_events=17619082.0, # this n_events is the gensumwt
+    aux={'n_events': 17626624} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -124,8 +124,8 @@ cpn.add_dataset(
     processes=[procs.wz_wlnu_zll],
     keys=['/WZto3LNu_amcatnloFXFX'],
     n_files=4,
-    n_events=1906322.0,
-    aux=None
+    n_events=1906322.0, # this n_events is the gensumwt
+    aux={'n_events': 3006412} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -135,8 +135,8 @@ cpn.add_dataset(
     processes=[procs.wz_wlnu_zqq],
     keys=['/WZtoLNu2Q_amcatnloFXFX'],
     n_files=4,
-    n_events=1404272.0,
-    aux=None
+    n_events=1404272.0, # this n_events is the gensumwt
+    aux={'n_events': 2453964} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -146,8 +146,8 @@ cpn.add_dataset(
     processes=[procs.zz],
     keys=['/ZZ'],
     n_files=1,
-    n_events=1181750.0,
-    aux=None
+    n_events=1181750.0, # this n_events is the gensumwt
+    aux={'n_events': 1181750} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -157,8 +157,8 @@ cpn.add_dataset(
     processes=[procs.zz_zqq_zll],
     keys=['/ZZto2L2Q_powheg', '/ZZto2L2Q_powheg_ext1'],
     n_files=33,
-    n_events=29478956.0,
-    aux=None
+    n_events=29478956.0, # this n_events is the gensumwt
+    aux={'n_events': 29662670} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -168,8 +168,8 @@ cpn.add_dataset(
     processes=[procs.zz_zqq_zll],
     keys=['/ZZto2L2Q_amcatnloFXFX'],
     n_files=4,
-    n_events=1310582.0,
-    aux=None
+    n_events=1310582.0, # this n_events is the gensumwt
+    aux={'n_events': 2150664} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -179,8 +179,8 @@ cpn.add_dataset(
     processes=[procs.zz_zll_znunu],
     keys=['/ZZto2L2Nu_powheg', '/ZZto2L2Nu_powheg_ext1'],
     n_files=29,
-    n_events=29249225.0,
-    aux=None
+    n_events=29249225.0, # this n_events is the gensumwt
+    aux={'n_events': 29313363} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -190,8 +190,8 @@ cpn.add_dataset(
     processes=[procs.zz_zll_zll],
     keys=['/ZZto4L_powheg', '/ZZto4L_powheg_ext1'],
     n_files=35,
-    n_events=28778338.0,
-    aux=None
+    n_events=28778338.0, # this n_events is the gensumwt
+    aux={'n_events': 29079492} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -201,8 +201,8 @@ cpn.add_dataset(
     processes=[procs.zz_znunu_zqq],
     keys=['/ZZto2Nu2Q_powheg', '/ZZto2Nu2Q_powheg_ext1'],
     n_files=4,
-    n_events=5881587.0,
-    aux=None
+    n_events=5881587.0, # this n_events is the gensumwt
+    aux={'n_events': 5890817} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -212,8 +212,8 @@ cpn.add_dataset(
     processes=[procs.www],
     keys=['/WWW_4F'],
     n_files=1,
-    n_events=408136.0,
-    aux=None
+    n_events=408136.0, # this n_events is the gensumwt
+    aux={'n_events': 450000} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -223,8 +223,8 @@ cpn.add_dataset(
     processes=[procs.wwz],
     keys=['/WWZ_4F'],
     n_files=4,
-    n_events=1774030.0,
-    aux=None
+    n_events=1774030.0, # this n_events is the gensumwt
+    aux={'n_events': 1950044} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -234,8 +234,8 @@ cpn.add_dataset(
     processes=[procs.wzz],
     keys=['/WZZ'],
     n_files=4,
-    n_events=1806418.0,
-    aux=None
+    n_events=1806418.0, # this n_events is the gensumwt
+    aux={'n_events': 1987058} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -245,6 +245,6 @@ cpn.add_dataset(
     processes=[procs.zzz],
     keys=['/ZZZ'],
     n_files=3,
-    n_events=1751582.0,
-    aux=None
+    n_events=1751582.0, # this n_events is the gensumwt
+    aux={'n_events': 1970234} # n_events in aux is the nEvents produced
 )

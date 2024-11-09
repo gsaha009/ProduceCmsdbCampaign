@@ -164,4 +164,4 @@ def get_nfiles_nevents(rootfiledirs, isData: bool, cores: Optional[int] = 1) -> 
     logger.info(f"nEvents       : {sumEvts}")
     logger.info(f"getting sumWt in {round((end-start)/60, 3)} mins")
 
-    return nTotalFiles, sumGenWeights
+    return nTotalFiles, sumGenWeights, sumEvts

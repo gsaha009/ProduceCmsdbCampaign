@@ -124,12 +124,14 @@ for idx, (dataset_key, dataset_val) in enumerate(datasets_tobefilled.items()):
         logger.info(f"getting numbers from {utilconfigfile}")
         temp = utilconfig.get(dataset_key)
         nfiles  = temp["nfiles"]
-        nevents = temp["nevents"]
+        sumwt   = temp["sumwt"]
+        nevents = temp["nevents"]        
     else:
         logger.info(f"calculating nevents and nfiles")
-        nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA)
+        #nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA)
+        nfiles, sumwt, nevents     = get_nfiles_nevents(dataset_full_paths, isDATA)
     
-    logger.info(f"nFiles: {nfiles}, sumWtProduced: {nevents}")
+    logger.info(f"nFiles: {nfiles}, sumWtProduced: {sumwt}, nEventsProduced: {nevents}")
 
     # read existing file
     # with open(os.path.join(campaign_dir, file_name), 'r') as fname:
@@ -138,6 +140,14 @@ for idx, (dataset_key, dataset_val) in enumerate(datasets_tobefilled.items()):
     #    if f"name='{dataset_key}'"
 
     dataset_id = int(f"{campaign_id}{idx}")
+
+    # -------- new -------- #
+    # adding nEvents in aux
+    aux = dataset_val.get("aux")
+    if aux is None:
+        aux = {"n_events": nevents}
+    else:
+        aux = dataset_val.get("aux") | {"n_events": nevents}
     
     with open(os.path.join(campaign_dir, file_name), 'a') as fname:
         fname.write("\n\n")
@@ -151,6 +161,8 @@ for idx, (dataset_key, dataset_val) in enumerate(datasets_tobefilled.items()):
         fname.write(f"""processes=[{','.join(dataset_val.get("processes"))}],"""+"\n    ")
         fname.write(f"""keys={dataset_val.get("keys")},"""+"\n    ")
         fname.write(f"""n_files={nfiles},"""+"\n    ")
-        fname.write(f"""n_events={nevents},"""+"\n    ")
-        fname.write(f"""aux={dataset_val.get("aux")}"""+"\n)")
+        #fname.write(f"""n_events={nevents},"""+"\n    ")
+        fname.write(f"""n_events={sumwt}, # this n_events is the gensumwt"""+"\n    ")
+        #fname.write(f"""aux={dataset_val.get("aux")}"""+"\n)")
+        fname.write(f"""aux={aux} # n_events in aux is the nEvents produced"""+"\n)")
         

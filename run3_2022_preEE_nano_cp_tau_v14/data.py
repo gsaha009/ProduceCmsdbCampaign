@@ -14,8 +14,8 @@ cpn.add_dataset(
     processes=[procs.data_tau],
     keys=['/Tau_Run2022C'],
     n_files=22,
-    n_events=25903135.0,
-    aux={'era': 'C'}
+    n_events=25903135.0, # this n_events is the gensumwt
+    aux={'era': 'C', 'n_events': 25903135} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -25,8 +25,8 @@ cpn.add_dataset(
     processes=[procs.data_tau],
     keys=['/Tau_Run2022D'],
     n_files=13,
-    n_events=16686692.0,
-    aux={'era': 'D'}
+    n_events=16686692.0, # this n_events is the gensumwt
+    aux={'era': 'D', 'n_events': 16686692} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -36,8 +36,8 @@ cpn.add_dataset(
     processes=[procs.data_mu],
     keys=['/SingleMuon_Run2022C'],
     n_files=8,
-    n_events=20162441.0,
-    aux={'era': 'C'}
+    n_events=20162441.0, # this n_events is the gensumwt
+    aux={'era': 'C', 'n_events': 20162441} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -47,8 +47,8 @@ cpn.add_dataset(
     processes=[procs.data_mu],
     keys=['/Muon_Run2022C'],
     n_files=60,
-    n_events=138329693.0,
-    aux={'era': 'C'}
+    n_events=138329693.0, # this n_events is the gensumwt
+    aux={'era': 'C', 'n_events': 138329693} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -58,8 +58,8 @@ cpn.add_dataset(
     processes=[procs.data_mu],
     keys=['/Muon_Run2022D'],
     n_files=34,
-    n_events=75440027.0,
-    aux={'era': 'D'}
+    n_events=75440027.0, # this n_events is the gensumwt
+    aux={'era': 'D', 'n_events': 75440027} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -69,8 +69,8 @@ cpn.add_dataset(
     processes=[procs.data_mu],
     keys=['/DoubleMuon_Run2022C'],
     n_files=3,
-    n_events=4646904,
-    aux={'era': 'C'}
+    n_events=4646904.0, # this n_events is the gensumwt
+    aux={'era': 'C', 'n_events': 4646904} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -80,8 +80,8 @@ cpn.add_dataset(
     processes=[procs.data_mu],
     keys=['/MuonEG_Run2022C'],
     n_files=13,
-    n_events=15768439,
-    aux={'era': 'C'}
+    n_events=15768439.0, # this n_events is the gensumwt
+    aux={'era': 'C', 'n_events': 15768439} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -91,8 +91,8 @@ cpn.add_dataset(
     processes=[procs.data_mu],
     keys=['/MuonEG_Run2022D'],
     n_files=7,
-    n_events=8007031,
-    aux={'era': 'D'}
+    n_events=8007031.0, # this n_events is the gensumwt
+    aux={'era': 'D', 'n_events': 8007031} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -102,8 +102,8 @@ cpn.add_dataset(
     processes=[procs.data_e],
     keys=['/EGamma_Run2022C'],
     n_files=119,
-    n_events=263549470.0,
-    aux={'era': 'C'}
+    n_events=263549470.0, # this n_events is the gensumwt
+    aux={'era': 'C', 'n_events': 263549470} # n_events in aux is the nEvents produced
 )
 
 cpn.add_dataset(
@@ -113,6 +113,6 @@ cpn.add_dataset(
     processes=[procs.data_e],
     keys=['/EGamma_Run2022D'],
     n_files=46,
-    n_events=89134996.0,
-    aux={'era': 'D'}
+    n_events=89134996.0, # this n_events is the gensumwt
+    aux={'era': 'D', 'n_events': 89134996} # n_events in aux is the nEvents produced
 )

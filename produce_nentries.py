@@ -58,9 +58,13 @@ for dataset_key, dataset_val in datasets_tobefilled.items():
     #isDATA = True if 'data' in dataset_key else False
     isDATA = bool(re.match('^data_', dataset_key))
     dataset_full_paths        = [store_path+key for key in dataset_val.get("keys")]
-    nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
+    #nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
+    nfiles, sumWt, nevents    = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
 
-    nEvt_dict[dataset_key] = {"nfiles": int(nfiles), "nevents": float(nevents) }
+    #nEvt_dict[dataset_key] = {"nfiles": int(nfiles), "nevents": float(nevents) }
+    nEvt_dict[dataset_key] = {"nfiles" : int(nfiles),
+                              "sumwt"  : float(sumWt),
+                              "nevents": int(nevents) }
 
 
 logger.info(f"nEvt_dict: {nEvt_dict}")
