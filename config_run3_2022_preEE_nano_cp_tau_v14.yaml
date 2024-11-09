@@ -36,7 +36,7 @@ datasets_info:
     keys:
       - /Tau_Run2022C
     aux:
-      era: C
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -48,7 +48,7 @@ datasets_info:
     keys:
       - /Tau_Run2022D
     aux:
-      era: D
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -63,7 +63,7 @@ datasets_info:
     keys:
       - /SingleMuon_Run2022C
     aux:
-      era: C
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -75,7 +75,7 @@ datasets_info:
     keys:
       - /Muon_Run2022C
     aux:
-      era: C
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -87,7 +87,7 @@ datasets_info:
     keys:
       - /Muon_Run2022D
     aux:
-      era: D
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -99,7 +99,7 @@ datasets_info:
     keys:
       - /DoubleMuon_Run2022C
     aux:
-      era: C
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -111,7 +111,7 @@ datasets_info:
     keys:
       - /MuonEG_Run2022C
     aux:
-      era: C
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -123,7 +123,7 @@ datasets_info:
     keys:
       - /MuonEG_Run2022D
     aux:
-      era: D
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -138,7 +138,7 @@ datasets_info:
     keys:
       - /EGamma_Run2022C
     aux:
-      era: C
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -150,7 +150,7 @@ datasets_info:
     keys:
       - /EGamma_Run2022D
     aux:
-      era: D
+      era: CD
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
