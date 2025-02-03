@@ -1,0 +1,384 @@
+data_tau_E:
+  nfiles: 25
+  sumwt: 30520481.0
+  nevents: 30520481
+data_tau_F:
+  nfiles: 95
+  sumwt: 115472800.0
+  nevents: 115472800
+data_tau_G:
+  nfiles: 15
+  sumwt: 17838713.0
+  nevents: 17838713
+data_mu_E:
+  nfiles: 64
+  sumwt: 141480973.0
+  nevents: 141480973
+data_mu_F:
+  nfiles: 215
+  sumwt: 449185088.0
+  nevents: 449185088
+data_mu_G:
+  nfiles: 38
+  sumwt: 76689396.0
+  nevents: 76689396
+data_muon_eg_E:
+  nfiles: 10
+  sumwt: 12868267.0
+  nevents: 12868267
+data_muon_eg_F:
+  nfiles: 31
+  sumwt: 38159099.0
+  nevents: 38159099
+data_muon_eg_G:
+  nfiles: 5
+  sumwt: 6238527.0
+  nevents: 6238527
+data_e_E:
+  nfiles: 78
+  sumwt: 148661479.0
+  nevents: 148661479
+data_e_F:
+  nfiles: 254
+  sumwt: 464077454.0
+  nevents: 464077454
+data_e_G:
+  nfiles: 43
+  sumwt: 76724231.0
+  nevents: 76724231
+dy_lep_m10to50_madgraph:
+  nfiles: 215
+  sumwt: 520125461.0
+  nevents: 520125461
+dy_lep_m10to50_amcatnlo:
+  nfiles: 98
+  sumwt: 168535477.0
+  nevents: 225587055
+dy_lep_m50_madgraph:
+  nfiles: 464
+  sumwt: 494841164.0
+  nevents: 494841164
+dy_lep_m50_amcatnlo:
+  nfiles: 215
+  sumwt: 143381876.0
+  nevents: 215402508
+dy_lep_m50_0j_amcatnlo:
+  nfiles: 295
+  sumwt: 275262493.0
+  nevents: 345134359
+dy_lep_m50_1j_amcatnlo:
+  nfiles: 382
+  sumwt: 151393986.0
+  nevents: 322967488
+dy_lep_m50_2j_amcatnlo:
+  nfiles: 407
+  sumwt: 84617746.0
+  nevents: 277717852
+dy_lep_m50_1j_madgraph:
+  nfiles: 61
+  sumwt: 48939365.0
+  nevents: 48939365
+dy_lep_m50_2j_madgraph:
+  nfiles: 65
+  sumwt: 49862030.0
+  nevents: 49862030
+dy_lep_m50_3j_madgraph:
+  nfiles: 44
+  sumwt: 28613025.0
+  nevents: 28613025
+dy_lep_m50_4j_madgraph:
+  nfiles: 18
+  sumwt: 9376714.0
+  nevents: 9376714
+dy_lep_m50_1j_pt40to100_amcatnlo:
+  nfiles: 207
+  sumwt: 83342153.0
+  nevents: 173415327
+dy_lep_m50_1j_pt100to200_amcatnlo:
+  nfiles: 100
+  sumwt: 37150718.0
+  nevents: 66051870
+dy_lep_m50_1j_pt200to400_amcatnlo:
+  nfiles: 14
+  sumwt: 4216114.0
+  nevents: 6667050
+dy_lep_m50_1j_pt400to600_amcatnlo:
+  nfiles: 4
+  sumwt: 1212377.0
+  nevents: 1722633
+dy_lep_m50_1j_pt600toInf_amcatnlo:
+  nfiles: 5
+  sumwt: 1393865.0
+  nevents: 1861585
+dy_lep_m50_2j_pt40to100_amcatnlo:
+  nfiles: 106
+  sumwt: 22075566.0
+  nevents: 72553546
+dy_lep_m50_2j_pt100to200_amcatnlo:
+  nfiles: 126
+  sumwt: 22578364.0
+  nevents: 70064268
+dy_lep_m50_2j_pt200to400_amcatnlo:
+  nfiles: 31
+  sumwt: 4497493.0
+  nevents: 12755867
+dy_lep_m50_2j_pt400to600_amcatnlo:
+  nfiles: 5
+  sumwt: 680347.0
+  nevents: 1739647
+dy_lep_m50_2j_pt600toInf_amcatnlo:
+  nfiles: 5
+  sumwt: 710540.0
+  nevents: 1682240
+wj_incl_madgraph:
+  nfiles: 344
+  sumwt: 683448011.0
+  nevents: 683448011
+wj_1j_madgraph:
+  nfiles: 25
+  sumwt: 42695566.0
+  nevents: 42695566
+wj_2j_madgraph:
+  nfiles: 29
+  sumwt: 36349344.0
+  nevents: 36349344
+wj_3j_madgraph:
+  nfiles: 28
+  sumwt: 27828446.0
+  nevents: 27828446
+wj_4j_madgraph:
+  nfiles: 7
+  sumwt: 4906634.0
+  nevents: 4906634
+wj_ht40to100_madgraph:
+  nfiles: 336
+  sumwt: 463219744.0
+  nevents: 463219744
+wj_ht100to400_madgraph:
+  nfiles: 395
+  sumwt: 371652113.0
+  nevents: 371652113
+wj_ht400to800_madgraph:
+  nfiles: 99
+  sumwt: 48339233.0
+  nevents: 48339233
+wj_ht800to1500_madgraph:
+  nfiles: 14
+  sumwt: 5234836.0
+  nevents: 5234836
+wj_ht1500to2500_madgraph:
+  nfiles: 5
+  sumwt: 1711928.0
+  nevents: 1711928
+wj_incl_amcatnlo:
+  nfiles: 162
+  sumwt: 195475598.0
+  nevents: 287618486
+wj_0j_amcatnlo:
+  nfiles: 320
+  sumwt: 543560166.0
+  nevents: 682250482
+wj_1j_amcatnlo:
+  nfiles: 363
+  sumwt: 252954566.0
+  nevents: 522743298
+wj_2j_amcatnlo:
+  nfiles: 337
+  sumwt: 106873894.0
+  nevents: 346779790
+ww:
+  nfiles: 34
+  sumwt: 53112080.0
+  nevents: 53112080
+ww_dl_powheg:
+  nfiles: 56
+  sumwt: 44754982.0
+  nevents: 44763914
+ww_sl_powheg:
+  nfiles: 201
+  sumwt: 188346496.0
+  nevents: 188383744
+ww_fh_powheg:
+  nfiles: 138
+  sumwt: 193956978.0
+  nevents: 193995550
+ww_sl_amcatnlo:
+  nfiles: 85
+  sumwt: 45175446.0
+  nevents: 75533018
+ww_fh_amcatnlo:
+  nfiles: 28
+  sumwt: 22853516.0
+  nevents: 37899752
+wz:
+  nfiles: 17
+  sumwt: 26722782.0
+  nevents: 26722782
+wz_wlnu_zll_powheg:
+  nfiles: 12
+  sumwt: 9664054.0
+  nevents: 9682904
+wz_wqq_zll_powheg:
+  nfiles: 35
+  sumwt: 29890474.0
+  nevents: 29921926
+wz_wlnu_zqq_powheg:
+  nfiles: 62
+  sumwt: 60234952.0
+  nevents: 60260660
+wz_wlnu_zll_amcatnlo:
+  nfiles: 14
+  sumwt: 6504631.0
+  nevents: 10278601
+wz_wlnu_zqq_amcatnlo:
+  nfiles: 11
+  sumwt: 4903875.0
+  nevents: 8556077
+zz:
+  nfiles: 3
+  sumwt: 4043040.0
+  nevents: 4043040
+zz_zqq_zll_powheg:
+  nfiles: 107
+  sumwt: 99798639.0
+  nevents: 100417465
+zz_zqq_zll_amcatnlo:
+  nfiles: 11
+  sumwt: 4631384.0
+  nevents: 7607188
+zz_zll_znunu_powheg:
+  nfiles: 105
+  sumwt: 100090200.0
+  nevents: 100311926
+zz_zll_zll_powheg:
+  nfiles: 132
+  sumwt: 100584729.0
+  nevents: 101640249
+zz_znunu_zqq_powheg:
+  nfiles: 14
+  sumwt: 20597604.0
+  nevents: 20630292
+www:
+  nfiles: 3
+  sumwt: 1345746.0
+  nevents: 1482480
+wwz:
+  nfiles: 10
+  sumwt: 5249916.0
+  nevents: 5771216
+wzz:
+  nfiles: 10
+  sumwt: 5229208.0
+  nevents: 5751288
+zzz:
+  nfiles: 8
+  sumwt: 5063206.0
+  nevents: 5695440
+tt_sl:
+  nfiles: 1081
+  sumwt: 537883189.0
+  nevents: 542269521
+tt_dl:
+  nfiles: 369
+  sumwt: 167682796.0
+  nevents: 169050774
+tt_fh:
+  nfiles: 484
+  sumwt: 363409416.0
+  nevents: 366376610
+st_tchannel_t:
+  nfiles: 10
+  sumwt: 9368799.0
+  nevents: 10178237
+st_tchannel_tbar:
+  nfiles: 5
+  sumwt: 4794814.0
+  nevents: 5185208
+st_schannel_t:
+  nfiles: 5
+  sumwt: 2685976.0
+  nevents: 4363850
+st_schannel_tbar:
+  nfiles: 4
+  sumwt: 1700756.0
+  nevents: 2762668
+st_tw_t_sl:
+  nfiles: 57
+  sumwt: 32511808.0
+  nevents: 32513048
+st_tw_t_dl:
+  nfiles: 31
+  sumwt: 16575338.0
+  nevents: 16575934
+st_tw_t_fh:
+  nfiles: 31
+  sumwt: 27459158.0
+  nevents: 27460118
+st_tw_tb_sl:
+  nfiles: 59
+  sumwt: 33757009.0
+  nevents: 33758259
+st_tw_tb_dl:
+  nfiles: 32
+  sumwt: 16782203.0
+  nevents: 16782809
+st_tw_tb_fh:
+  nfiles: 29
+  sumwt: 25974756.0
+  nevents: 25975708
+h_ggf_tautau_uncorrelated_filter:
+  nfiles: 32
+  sumwt: 21340204.0
+  nevents: 21340864
+h_ggf_tautau_uncorrelatedDecay_CPodd_Filtered_ProdAndDecay:
+  nfiles: 42
+  sumwt: 21495773.0
+  nevents: 26545013
+h_ggf_tautau_uncorrelatedDecay_CPodd_UnFiltered_ProdAndDecay:
+  nfiles: 1
+  sumwt: 448150.0
+  nevents: 560000
+h_ggf_tautau_uncorrelatedDecay_MM_Filtered_ProdAndDecay:
+  nfiles: 40
+  sumwt: 20689379.0
+  nevents: 25643123
+h_ggf_tautau_uncorrelatedDecay_MM_UnFiltered_ProdAndDecay:
+  nfiles: 1
+  sumwt: 441570.0
+  nevents: 554438
+h_ggf_tautau_uncorrelatedDecay_SM_Filtered_ProdAndDecay:
+  nfiles: 38
+  sumwt: 19599725.0
+  nevents: 24356269
+h_ggf_tautau_uncorrelatedDecay_SM_UnFiltered_ProdAndDecay:
+  nfiles: 1
+  sumwt: 445092.0
+  nevents: 560000
+h_ggf_tautau_M125_amcatnloFXFX:
+  nfiles: 5
+  sumwt: 1992281.0
+  nevents: 3533459
+zh_tautau_uncorrelatedDecay_Filtered:
+  nfiles: 4
+  sumwt: 1863291.0
+  nevents: 1863291
+zh_tautau_uncorrelatedDecay_UnFiltered:
+  nfiles: 1
+  sumwt: 69650.0
+  nevents: 69650
+wph_tautau_uncorrelatedDecay_Filtered:
+  nfiles: 5
+  sumwt: 2025321.0
+  nevents: 2121547
+wph_tautau_uncorrelatedDecay_UnFiltered:
+  nfiles: 1
+  sumwt: 66154.0
+  nevents: 70000
+wmh_tautau_uncorrelatedDecay_Filtered:
+  nfiles: 4
+  sumwt: 1480135.0
+  nevents: 1550013
+wmh_tautau_uncorrelatedDecay_UnFiltered:
+  nfiles: 1
+  sumwt: 63910.0
+  nevents: 67580

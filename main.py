@@ -18,6 +18,7 @@ parser.add_argument("-c",
 parser.add_argument("-u",
                     "--utilconfig",
                     action='store', required=False, type=str,
+                    default="nFiles_nEvents.yml",
                     help="config with nentries and nfiles")
 
 args = parser.parse_args()

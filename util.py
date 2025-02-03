@@ -62,6 +62,8 @@ def runShellCmd(cmdList):
 
 
 def get_nfiles_nevents_per_file(rootfile : str, isData: bool) -> float:
+    logger.info(rootfile)
+
     nEv_sel_tree = 0.0
     nEv_nsel_tree = 0.0
     sumGenWt_sel_tree  = 0.0

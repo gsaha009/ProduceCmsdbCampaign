@@ -24,6 +24,11 @@ parser.add_argument("-w",
                     action='store', required=False, type=int, default=1,
                     help="n threads")
 
+parser.add_argument("-ch",
+                    "--check",
+                    action='store', required=False, type=int, default=0,
+                    help="before the execution, it will just check if the files are there in the paths mentioned")
+
 args = parser.parse_args()
 
 cores = args.workers
@@ -59,13 +64,25 @@ for dataset_key, dataset_val in datasets_tobefilled.items():
     isDATA = bool(re.match('^data_', dataset_key))
     dataset_full_paths        = [store_path+key for key in dataset_val.get("keys")]
     #nfiles, nevents           = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
-    nfiles, sumWt, nevents    = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
+    if args.check == 1:
+        for path in dataset_full_paths:
+            root_files = glob.glob(f"{path}/*.root")
+            if len(root_files) > 0:
+                logger.info(f"{len(root_files)} ROOT files found in {path}")
+            else:
+                logger.warning(f"NO root files found in {path}")
+    else:
+        nfiles, sumWt, nevents    = get_nfiles_nevents(dataset_full_paths, isDATA, cores)
 
-    #nEvt_dict[dataset_key] = {"nfiles": int(nfiles), "nevents": float(nevents) }
-    nEvt_dict[dataset_key] = {"nfiles" : int(nfiles),
-                              "sumwt"  : float(sumWt),
-                              "nevents": int(nevents) }
+        #nEvt_dict[dataset_key] = {"nfiles": int(nfiles), "nevents": float(nevents) }
+        nEvt_dict[dataset_key] = {"nfiles" : int(nfiles),
+                                  "sumwt"  : float(sumWt),
+                                  "nevents": int(nevents) }
 
+
+if args.check == 1:
+    logger.warning("Do not use -ch to create output")
+    sys.exit()
 
 logger.info(f"nEvt_dict: {nEvt_dict}")
 # open a yaml file to write

@@ -13,15 +13,15 @@
 
 
 # name of the campaign to be created
-campaign: run3_2022_preEE_nano_cp_tau_v14
+campaign: run3_2022_postEE_nano_cp_tau_v14
 # path of the nanoaod samples
-store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v2/Run3_2022
+store_path: /eos/cms/store/group/phys_higgs/HLepRare/skim_2024_v2/Run3_2022EE
 # era
 era: 2022
 nanoaod: 14
-postfix: preEE
+postfix: postEE
 # year (YR) version (nanoaod) UniqueNo (ZZ)
-campaign_id: 221401
+campaign_id: 221402
 
 datasets_info: 
   # -------------------------------------------------- #
@@ -30,25 +30,37 @@ datasets_info:
 
   # ---------- tau dataset ---------- #
 
-  data_tau_C:
+  data_tau_E:
     processes:
       - procs.data_tau
     keys:
-      - /Tau_Run2022C
+      - /Tau_Run2022E
     aux:
-      era: CD
+      era: E
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_tau_D:
+  data_tau_F:
     processes:
       - procs.data_tau
     keys:
-      - /Tau_Run2022D
+      - /Tau_Run2022F
     aux:
-      era: CD
+      era: F
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
+
+  data_tau_G:
+    processes:
+      - procs.data_tau
+    keys:
+      - /Tau_Run2022G
+    aux:
+      era: G
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -57,73 +69,73 @@ datasets_info:
 
   # ---------- mu dataset ---------- #
 
-  data_single_mu_C:
+  data_mu_E:
     processes:
       - procs.data_mu
     keys:
-      - /SingleMuon_Run2022C
+      - /Muon_Run2022E
     aux:
-      era: CD
+      era: E
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_mu_C:
+  data_mu_F:
     processes:
       - procs.data_mu
     keys:
-      - /Muon_Run2022C
+      - /Muon_Run2022F
     aux:
-      era: CD
+      era: F
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_mu_D:
+  data_mu_G:
     processes:
       - procs.data_mu
     keys:
-      - /Muon_Run2022D
+      - /Muon_Run2022G
     aux:
-      era: CD
+      era: G
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_double_mu_C:
+  data_muon_eg_E:
     processes:
       - procs.data_mu
     keys:
-      - /DoubleMuon_Run2022C
+      - /MuonEG_Run2022E
     aux:
-      era: CD
+      era: E
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_muon_eg_C:
+  data_muon_eg_F:
     processes:
       - procs.data_mu
     keys:
-      - /MuonEG_Run2022C
+      - /MuonEG_Run2022F
     aux:
-      era: CD
+      era: F
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_muon_eg_D:
+  data_muon_eg_G:
     processes:
       - procs.data_mu
     keys:
-      - /MuonEG_Run2022D
+      - /MuonEG_Run2022G
     aux:
-      era: CD
+      era: G
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
@@ -132,30 +144,41 @@ datasets_info:
 
   # ------------ e dataset ------------- #
 
-  data_e_C: 
+  data_e_E: 
     processes:
       - procs.data_e
     keys:
-      - /EGamma_Run2022C
+      - /EGamma_Run2022E
     aux:
-      era: CD
+      era: E
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
-  data_e_D:
+  data_e_F:
     processes:
       - procs.data_e
     keys:
-      - /EGamma_Run2022D
+      - /EGamma_Run2022F
     aux:
-      era: CD
+      era: F
       #require_triggers:
       #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
       #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
     dest: data.py
 
+  data_e_G:
+    processes:
+      - procs.data_e
+    keys:
+      - /EGamma_Run2022G
+    aux:
+      era: G
+      #require_triggers:
+      #  - DoubleMediumChargedIsoPFTauHPS40_Trk1_eta2p1
+      #  - DoubleTightChargedIsoPFTauHPS35_Trk1_eta2p1
+    dest: data.py
 
 
   # -------------------------------------------------- #
@@ -196,7 +219,6 @@ datasets_info:
       - procs.dy_m50toinf
     keys:
       - /DYto2L_M_50_amcatnloFXFX
-      - /DYto2L_M_50_amcatnloFXFX_ext1
     dest: dy.py
 
 
@@ -745,21 +767,6 @@ datasets_info:
       - /ST_tW_antitop_4Q_ext1
     dest: st.py
 
-  # --------------- ttvv --------------- #
-  #ttww: 
-  #  processes:
-  #    - procs.ttww
-  #  keys: 
-  #    - /TTWW
-  #  dest: tt.py
-  #ttwz: 
-  #  processes:
-  #    - procs.ttwz
-  #  keys: 
-  #    - /TTWZ
-  #  dest: tt.py
-  
-
   # -------------------------------------------------- #
   # ------------------- SIGNAL ----------------------- #
   # -------------------------------------------------- #
@@ -836,14 +843,14 @@ datasets_info:
       is_signal: True
     dest: signal.py
 
-  h_ggf_tautau_prod_cp_even_sm:
-    processes:
-      - procs.h_ggf_htt
-    keys:
-      - /GluGluHToTauTau_M125
-    aux:
-      is_signal: True
-    dest: signal.py
+  #h_ggf_tautau_prod_cp_even_sm:
+  #  processes:
+  #    - procs.h_ggf_htt
+  #  keys:
+  #    - /GluGluHToTauTau_M125
+  #  aux:
+  #    is_signal: True
+  #  dest: signal.py
 
   # --- Zh --- #
 
@@ -870,7 +877,7 @@ datasets_info:
 
   wph_tautau_uncorrelatedDecay_Filtered:
     processes:
-      - procs.wh_htt
+      - procs.wph_htt
     keys:
       - /WplusHToTauTau_UncorrelatedDecay_Filtered
     aux:
@@ -879,7 +886,7 @@ datasets_info:
 
   wph_tautau_uncorrelatedDecay_UnFiltered:
     processes:
-      - procs.wh_htt
+      - procs.wph_htt
     keys:
       - /WplusHToTauTau_UncorrelatedDecay_UnFiltered
     aux:
@@ -889,7 +896,7 @@ datasets_info:
 
   wmh_tautau_uncorrelatedDecay_Filtered:
     processes:
-      - procs.wh_htt
+      - procs.wmh_htt
     keys:
       - /WminusHToTauTau_UncorrelatedDecay_Filtered
     aux:
@@ -898,7 +905,7 @@ datasets_info:
 
   wmh_tautau_uncorrelatedDecay_UnFiltered:
     processes:
-      - procs.wh_htt
+      - procs.wmh_htt
     keys:
       - /WminusHToTauTau_UncorrelatedDecay_UnFiltered
     aux:
